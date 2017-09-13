@@ -25,7 +25,7 @@ type SensingElement struct {
 returns all sensing_elements areas
 */
 func AllSensingElements(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/psimoes/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {
@@ -54,7 +54,7 @@ func AllSensingElements(w http.ResponseWriter, r *http.Request) {
 }
 
 func InsertSensingElements(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/psimoes/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {

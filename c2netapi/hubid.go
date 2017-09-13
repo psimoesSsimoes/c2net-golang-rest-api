@@ -16,7 +16,7 @@ type HubId struct {
 }
 
 func InsertHubId(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/psimoes/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
 	defer db.Close()
 	if err != nil {
 		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
