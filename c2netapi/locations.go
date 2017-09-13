@@ -60,13 +60,14 @@ func InsertSensorArea(w http.ResponseWriter, r *http.Request) {
 
 		decoder := json.NewDecoder(r.Body)
 		log.Info(decoder)
-		var area SensorArea
-		err = decoder.Decode(&area)
+		var areas []SensorArea
+		err = decoder.Decode(&areas)
 
 		if err != nil {
 			log.Println(err.Error())
 		}
-		if ValidSensorArea(area) {
+		for _, area := range areas {
+
 			stmt, _ := db.Prepare("INSERT INTO locations (cod_res_c2net,cod_res_node,name_location) values (?,?,?)")
 			_, err = stmt.Exec(area.Idc2net, area.Idnode, area.Name)
 			if err != nil {

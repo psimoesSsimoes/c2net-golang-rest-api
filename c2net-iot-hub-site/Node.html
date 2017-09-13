@@ -314,14 +314,13 @@ img.emoji {
 	       	return result;
     	}		
 	});
-	var all_sensors = $.getValues("/allsensors");
-	var all_sensing = $.getValues("/allsensing");
+	var all_areas = $.getValues("/allareas");
 	
 
-	while(all_sensors==null && all_sensing==null){}
+	while(all_areas==null){}
 
 	$('#body').append("<tr id=\"addr0\" data-id=\"0\" class=\"hidden\">");
-	for (var i = 0;i<all_sensing.length; i++){
+	for (var i = 0;i<all_areas.length; i++){
 				
 					var str = '';
 
@@ -332,9 +331,9 @@ img.emoji {
 				str+='<td data-name="del"><button name"del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 				
-				$("#name"+i).val(all_sensing[i].idc2net);  
-				$("#mail"+i).val(all_sensing[i].idnode);  
-				$("#desc"+i).val(all_sensing[i].name);  
+				$("#name"+i).val(all_areas[i].idc2net);  
+				$("#mail"+i).val(all_areas[i].idnode);  
+				$("#desc"+i).val(all_areas[i].name);  
 
 	}
 	
@@ -392,22 +391,20 @@ $("#save").on("click",function(){
 	
 	for (var i = 0; i < idsc2net.length ; i++){
 		
-		if (!isNaN(sensors_index[i])){
 			obj.idc2net = parseInt(idsc2net[i]);
 			obj.idnode = idsnodes[i];
 			obj.name = loc_names[i];
 			out.push(obj);
 			obj = {};
-		}else{
 			
-		}
 
 
 	}
 	
 	console.log(out);
+	
 	$.ajax({
-    		'url' : '/insertsensings',
+    		'url' : '/area',
     		'type' : 'POST',
 		 contentType: 'application/json',
 		 data: JSON.stringify(out), 
