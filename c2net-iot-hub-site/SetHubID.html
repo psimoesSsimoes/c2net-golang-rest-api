@@ -317,7 +317,14 @@ $("form").submit(function(x){
     			success: function (data) {
 				$("#success").show(); 
 				setTimeout(function() { $("#success").hide(); $('#centerid').load(document.URL +  ' #centerid');load_js();	}, 4000);
-			
+				
+		$.ajax({
+   		 	url: "/restart",
+    		    	type: 'GET',
+    			success: function (data) { 
+				
+			}});
+	
    			},
     			error: function(){
 				$("#failure").show(); 
