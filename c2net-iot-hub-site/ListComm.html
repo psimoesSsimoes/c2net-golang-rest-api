@@ -323,11 +323,13 @@ var dropdown = $('.dropdown');
 	    console.log(data);
 	    var arr = $.parseJSON(data);
 	    for (i=0; i < arr.length ; i++){
-	    	switch(arr[i]){
+		console.log(arr[i]);
+	    	switch(arr[i].trim()){
 			case "DataListenerSerialPort":$('#serial').click();break;	
 			case "DataListenerZigBee":$('#zig').click();break;	
 			case "DataListenerSocketUdp":$('#sock').click();break;	
 			case "DataListenerCanBus":$('#can').click();break;
+			case "DataListenerPistolReader":$('#serial').click();break;
 			default:
 		}
 	    }
@@ -436,9 +438,7 @@ dtlAdd.on('click', function(){
 		'contentType':'application/json',
 		'data': JSON.stringify(x),
     		'success' : function(data) {
-	    		Materialize.toast('Updated Communication Protocols!', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
-
-	    		Materialize.toast('The Hub will restart in 40 seconds!', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast	
+			alert("success!");
 		}})
 	  }
 });
