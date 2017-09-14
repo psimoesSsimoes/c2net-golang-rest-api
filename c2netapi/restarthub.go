@@ -14,7 +14,7 @@ func RestartHub(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Info(err)
 	}
-	_, err = exec.Command("/bin/bash", "-c", "cd /home/pi/C2NET/c2net-golang-rest-api && sudo ./setEnv.sh").Output()
+	_, err = exec.Command("/bin/bash", "-c", "cd /home/pi/C2NET/c2net-iot-hub && sudo ./setEnv.sh").Output()
 	if err != nil {
 		log.Info(err)
 	}
