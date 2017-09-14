@@ -24,7 +24,7 @@ type SensorArea struct {
 returns all sensor areas
 */
 func AllSensorAreas(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {
@@ -51,7 +51,7 @@ func AllSensorAreas(w http.ResponseWriter, r *http.Request) {
 }
 
 func InsertSensorArea(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {
@@ -82,7 +82,7 @@ func InsertSensorArea(w http.ResponseWriter, r *http.Request) {
 }
 
 func EditArea(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {
@@ -113,7 +113,7 @@ func EditArea(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteArea(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {
@@ -142,7 +142,7 @@ func DeleteArea(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteAllAreas(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {

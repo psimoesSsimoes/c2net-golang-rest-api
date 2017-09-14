@@ -24,7 +24,7 @@ type Alive struct {
 returns all sensor areas
 */
 func AllAlive(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {
@@ -52,7 +52,7 @@ func AllAlive(w http.ResponseWriter, r *http.Request) {
 }
 
 func InsertAlive(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {
@@ -80,7 +80,7 @@ func InsertAlive(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteAlive(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {
@@ -109,7 +109,7 @@ func DeleteAlive(w http.ResponseWriter, r *http.Request) {
 }
 
 func AllAlivesPerArea(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/Github/c2net-golang-rest-api/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
 	if err != nil {
