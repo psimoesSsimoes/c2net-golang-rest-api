@@ -62,7 +62,7 @@ func InsertAlive(w http.ResponseWriter, r *http.Request) {
 		decoder := json.NewDecoder(r.Body)
 		log.Info(decoder)
 		var ss []Alive
-		err = decoder.Decode(&s)
+		err = decoder.Decode(&ss)
 
 		if err != nil {
 			log.Println(err.Error())
