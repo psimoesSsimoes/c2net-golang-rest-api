@@ -61,12 +61,13 @@ func InsertAlive(w http.ResponseWriter, r *http.Request) {
 
 		decoder := json.NewDecoder(r.Body)
 		log.Info(decoder)
-		var s Alive
+		var ss []Alive
 		err = decoder.Decode(&s)
 
 		if err != nil {
 			log.Println(err.Error())
 		}
+		for _,s:=range ss{
 		stmt, _ := db.Prepare("INSERT INTO alive_sensors (cod_sensor,cod_res_node,name_sensor) values (?,?,?)")
 		_, err = stmt.Exec(s.Idsensor, s.Idc2net, s.Name)
 		if err != nil {
@@ -76,6 +77,7 @@ func InsertAlive(w http.ResponseWriter, r *http.Request) {
 
 			json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully Inserted AliveArea Into the Database", Body: fmt.Sprintf("%+v\n", s)})
 		}
+	     }
 	}
 }
 

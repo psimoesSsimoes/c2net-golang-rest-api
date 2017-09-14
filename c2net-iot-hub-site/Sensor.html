@@ -405,7 +405,7 @@ $("#save").on("click",function(){
 			if (idsc2net[i]!=""){	
 			obj.idsensor= idsc2net[i];
 			obj.name = idsnodes[i];
-		        obj.idc2net = y[x.indexOf(idsc2net[i])] 	
+		        obj.idc2net = y[parseInt(x.indexOf(idsc2net[i]))] 	
 			out.push(obj);
 			obj = {};
 			}
