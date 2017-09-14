@@ -341,6 +341,7 @@ img.emoji {
 
 
 	$('#body').append("<tr id=\"addr0\" data-id=\"0\" class=\"hidden\">");
+	if(all_sensors!=null)
 	for (var i = 0;i<all_sensors.length; i++){
 				
 					var str = '';
@@ -373,7 +374,7 @@ $(document).ready(function() {
        	console.log(newid); 
         		var str = '';
 			str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
-				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID that identifies this type of sensor. Must be unique!' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID that Uniquely identifies this type of sensor.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Name of this Type of Sensor' class=\"form-control\"/></td>\n";
 					
 			str+='<td data-name="del"><button name"del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
