@@ -339,7 +339,7 @@ img.emoji {
 	
 		
 	$("#addr0").hide();
-
+var ids_to_remove=[]; 
 $(document).ready(function() {
     $("#add_row").on("click", function() {
         // Dynamic Rows Code
@@ -362,12 +362,15 @@ $(document).ready(function() {
 				str+='<td data-name="del"><button name"del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 $("td button.row-remove").on("click", function(){
+
+	//ids_to_remove.push($(this).closest("tr").find('[id^=name]').val());
 	$(this).closest("tr").remove();
 });
 
 });
 
 $("td button.row-remove").on("click", function(){
+	
 	$(this).closest("tr").remove();
 });
 
