@@ -15,11 +15,11 @@ import (
  * sensor placed on an location
  */
 type Sensor struct {
-	Nodeid string
-	Typeid string
-	TypeName string
-	Id string
-	Name string
+	Nodeid   string `json:"nodeid"`
+	Typeid   string `json:"typeid"`
+	TypeName string `json:"type_name"`
+	Id       string `json:"id"`
+	Name     string `json:"name"`
 }
 
 /**
