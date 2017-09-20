@@ -11,7 +11,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-type State struct {
+type Hub struct {
 	State int `json:"state"`
 }
 
@@ -75,3 +75,34 @@ func StartHub(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
+
+
+func StatusHub(w http.ResponseWriter, r *http.Request) {
+
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
+	defer db.Close()
+
+	if err != nil {
+		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
+	} else {
+	
+		rows, err := db.Query("SELECT * FROM ON_OFF")
+
+			var s Hub
+		for rows.Next() {
+
+
+			err = rows.Scan(&s.State)
+			if err != nil {
+				log.Error(err.Error())
+				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
+				return
+			}
+		}
+		log.Info(s)
+		json.NewEncoder(w).Encode(s)
+
+	}
+
+}
+

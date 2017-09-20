@@ -36,4 +36,5 @@ var routes = Routes{
 	Route{"AllAlive", "GET", "/allalive", AllAlive},
 	Route{"HubStop", "GET", "/hubstop", StopHub},
 	Route{"HubStart", "GET", "/hubstart", StartHub},
+	Route{"HubStatus", "GET", "/hubstatus", StatusHub},
 }

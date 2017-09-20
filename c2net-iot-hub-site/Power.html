@@ -269,12 +269,65 @@ img.emoji {
 
 
 <script type="text/javascript">
-$('#btn-bg').click(function(){
+
+$.ajax({
+    		'url' : '/hubstatus',
+    		'type' : 'GET',
+		'success' : function(data) {
+			obj = JSON.parse(data);
+			if (obj.state == 1){
+				
   $('#btn-bg').toggleClass('active');
-  if($('#btn-bg').hasClass("active")){
     $('#power-text strong').text('ON').css('color', '#61fc8c');
+			}else{
+			
+		 $('#power-text strong').text('OFF').css('color', '#2a2a2a');	
+			}
+		},
+		'failure': function(data){
+			alert("failed!!!")
+		},
+	});
+
+
+$('#btn-bg').click(function(){
+  if($('#btn-bg').hasClass('active')){
+		$.ajax({
+    		'url' : '/hubstop',
+    		'type' : 'GET',
+		'success' : function(data) {
+console.log("OFF");
+
+  
+
+		},
+		'failure': function(data){
+			alert("failed!!!")
+		},
+	});
+$('#btn-bg').toggleClass('active');
+		 $('#power-text strong').text('OFF').css('color', '#2a2a2a');	
+
+
   }else{
-    $('#power-text strong').text('OFF').css('color', '#2a2a2a');
+	$.ajax({
+    		'url' : '/hubstart',
+    		'type' : 'GET',
+		'success' : function(data) {
+console.log("ON");			
+
+		},
+		'failure': function(data){
+			alert("failed!!!")
+		},
+	});
+  $('#btn-bg').toggleClass('active');
+    $('#power-text strong').text('ON').css('color', '#61fc8c');
+
+
+
+
+  
   }
 });
 
