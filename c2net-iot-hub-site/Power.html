@@ -46,12 +46,10 @@ img.emoji {
 <link rel="stylesheet" id="stylesheet-css" href="LWFiles/style.css" type="text/css" media="all">
 <link rel="stylesheet" id="font-awesome-css" href="LWFiles/font-awesome.css" type="text/css" media="all">
 <link rel="stylesheet" id="lightbox-stylesheet-css" href="LWFiles/lightcase.css" type="text/css" media="all">
-<link rel="stylesheet" href="LWFiles/sensing.css" type="text/css" media="all">
+<link rel="stylesheet" href="LWFiles/power.css" type="text/css" media="all">
 <script type="text/javascript" src="LWFiles/jquery.js"></script>
 <script type="text/javascript" src="LWFiles/jquery-migrate.js"></script>
 <script type="text/javascript" src="LWFiles/modernizr.js"></script>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Optional theme -->
 
 <!-- Latest compiled and minified JavaScript 
@@ -237,31 +235,17 @@ img.emoji {
 			<a href="http://gris.uninova.pt" class="tablet--up arrow--right white start--project">GRIS/Uninova</a>
 		</div>
 	</nav>
-	<div class="alert alert-success alert-dismissible fade in text-center hidden" role="alert" id="success">
-  <strong>Well done!</strong> You successfully updated <a href="#" class="alert-link">sensing elements!</a>.
-	</div>	  
-<div class="alert alert-danger alert-dismissible fade in text-center hidden" role="alert" id="failure">
-  <strong>UHMMM!</strong> Something bad happened <a href="#" class="alert-link">in our server :(</a>.
-	</div>	
 	<section class="full" id="page--hero">
 
 
-<div class="container">
-    <div class="row clearfix">
-    	<div class="col-md-12 table-responsive">
-			<table class="table table-bordered table-hover table-sortable" id="tab_logic">
-				<thead id="head">
-				</thead>
-					<tbody id = "body">
-    					</tbody>
-			</table>
-		</div>
-	</div>
-	<a id="add_row" class="btn btn-default pull-right">Add</a>
-	<a id="save" class="btn btn-primary pull-right">Save</a>
+<div id="btn-bg">
+  <div id="btn-highlight"></div>
+  <div id="btn-ring">
+    <div id="ring-line"></div>
+  </div>
+</div>
 
-</div>	
-
+<div id="power-text">LW-IoT is <strong>OFF</strong></div>
 
 	</section>
 <footer id="global--footer">
@@ -271,8 +255,6 @@ img.emoji {
 				© GRIS/UNINOVA. 2017
 			</a>
 		</div>
-
-	</footer>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="LWFiles/rangeslider.js"></script>
@@ -285,150 +267,17 @@ img.emoji {
 <script type="text/javascript" src="LWFiles/wp-embed.js"></script>
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-
-
-	var titles = ["C2NeT ID","Node ID","Node Name"];
-	$('#head').append("<tr>");
-	for (var i = 0; i < titles.length; i++){
-		$('#head').append("<th class=\"text-center\">"+titles[i]+"</th>");
-	}
-
-
-	$('#head').append("<th class=\"text-center\" style=\"border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;\"></th></tr>");
-	
-
-	
-	jQuery.extend({
-        getValues: function(url) {
-        	var result = null;
-        	$.ajax({
-    		'url' : url,
-    		'type' : 'GET',
-    		 async: false,
-		'success' : function(data) {
-			result = JSON.parse(data);
-		}});
-	       	return result;
-    	}		
-	});
-	var all_areas = $.getValues("/allareas");
-	
-
-
-	$('#body').append("<tr id=\"addr0\" data-id=\"0\" class=\"hidden\">");
-	if(all_areas!=null)
-	for (var i = 0;i<all_areas.length; i++){
-				
-					var str = '';
-
-				str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
-				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='Value atributed to resource' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Id corresponding to Node' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"desc\"><input id=\"desc"+i+"\" type=\"text\" name='desc"+i+"'  placeholder='Name of Node' class=\"form-control\"/></td>\n";
-				str+='<td data-name="del"><button name"del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
-				$('#body').append(str);
-				
-				$("#name"+i).val(all_areas[i].idc2net);  
-				$("#mail"+i).val(all_areas[i].idnode);  
-				$("#desc"+i).val(all_areas[i].name);  
-
-	}
-	
-		
-	$("#addr0").hide();
-var ids_to_remove=[]; 
-$(document).ready(function() {
-    $("#add_row").on("click", function() {
-        // Dynamic Rows Code
-        
-        // Get max row id and set new id
-        var newid = 0;
-        $.each($("#tab_logic tr"), function() {
-            if (parseInt($(this).data("id")) > newid) {
-                newid = parseInt($(this).data("id"));
-            }
-        });
-        newid++;
-       	console.log(newid); 
-        		var str = '';
-
-				str+="<tr id=\"addr"+ newid +"\" data-id=\""+newid+" \">\n";
-				str+="<td data-name=\"name\"><input id=\"name"+newid+"\" type=\"text\" name='name"+newid+"'  placeholder='Value atributed to resource' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+newid+"\" type=\"text\" name='mail"+newid+"'  placeholder='Id corresponding to Node' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"desc\"><input id=\"desc"+newid+"\" type=\"text\" name='desc"+newid+"'  placeholder='Name of Node' class=\"form-control\"/></td>\n";
-				str+='<td data-name="del"><button name"del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
-				$('#body').append(str);
-$("td button.row-remove").on("click", function(){
-
-	//ids_to_remove.push($(this).closest("tr").find('[id^=name]').val());
-	$(this).closest("tr").remove();
+$('#btn-bg').click(function(){
+  $('#btn-bg').toggleClass('active');
+  if($('#btn-bg').hasClass("active")){
+    $('#power-text strong').text('ON').css('color', '#61fc8c');
+  }else{
+    $('#power-text strong').text('OFF').css('color', '#2a2a2a');
+  }
 });
 
-});
-
-$("td button.row-remove").on("click", function(){
-	
-	$(this).closest("tr").remove();
-});
-
-$("#save").on("click",function(){
-	var out =[];
-	var obj = {};
-	var idsc2net=[]; 
-	$('[id^=name]').each(function(arr){
-		idsc2net.push($(this).val())
-	});
-	var idsnodes=[]
-	$('[id^=mail]').each(function(arr){
-		idsnodes.push($(this).val())
-	});
-
-	var loc_names = [] 
-	$('[id^=desc]').each(function(arr){
-		loc_names.push($(this).val())
-	});
-
-	
-	for (var i = 0; i < idsc2net.length ; i++){
-		
-			obj.idc2net = parseInt(idsc2net[i]);
-			obj.idnode = idsnodes[i];
-			obj.name = loc_names[i];
-			out.push(obj);
-			obj = {};
-			
-
-
-	}
-	
-	console.log(out);
-	
-	$.ajax({
-    		'url' : '/area',
-    		'type' : 'POST',
-		 contentType: 'application/json',
-		 data: JSON.stringify(out), 
-		'success' : function(data) {
-			$("#success").removeClass('hidden');
-			setTimeout(function() { $("#success").addClass('hidden');}, 4000);
-
-		},
-		'failure': function(data){
-			$("#failure").removeClass('hidden');
-			setTimeout(function() { $("#failure").addClass('hidden');}, 4000);
-
-		},
-	});
-
-});
-
-
-    
-
-});
 
 </script>
 
