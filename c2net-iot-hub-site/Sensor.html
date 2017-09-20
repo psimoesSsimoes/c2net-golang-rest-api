@@ -312,7 +312,7 @@ img.emoji {
 <script type="text/javascript">
 
 
-	var titles = ["Sensor Type ID","Sensor Type Name"];
+	var titles = ["NodeID","Sensor Type ID","Sensor Type Name","Sensor Name"];
 	$('#head').append("<tr>");
 	for (var i = 0; i < titles.length; i++){
 		$('#head').append("<th class=\"text-center\">"+titles[i]+"</th>");
@@ -347,8 +347,10 @@ img.emoji {
 					var str = '';
 
 				str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
-				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID that Uniquely identifies this type of sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Sensor Type Id.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"typename\"><input id=\"typename"+i+"\" type=\"text\" name='typename"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='Sensor Name.' class=\"form-control\"/></td>\n";
 				str+='<td data-name="del"><button name"del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 				
@@ -374,9 +376,11 @@ $(document).ready(function() {
        	console.log(newid); 
         		var str = '';
 			str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
-				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID that Uniquely identifies this type of sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Name of this Type of Sensor' class=\"form-control\"/></td>\n";
-					
+					str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='ID that identifies this type of Sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"typename\"><input id=\"typename"+i+"\" type=\"text\" name='typename"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='This Sensor Name.' class=\"form-control\"/></td>\n";
+				
 			str+='<td data-name="del"><button name"del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 	$("td button.row-remove").on("click", function(){
