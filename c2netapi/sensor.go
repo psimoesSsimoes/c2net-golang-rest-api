@@ -20,8 +20,6 @@ type Sensor struct {
 	Typename string `json:"type_name"`
 	Id       string `json:"id"`
 	Name     string `json:"name"`
-	C2netname string `json:"c2netname"`
-	Active int `json:"active"`
 
 }
 
@@ -43,7 +41,7 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 		for rows.Next() {
 
 			var s Sensor
-			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.Typename, &s.Id, &s.Name, &s.C2netname, &s.Active)
+			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.Typename, &s.Id, &s.Name)
 			if err != nil {
 				log.Error(err.Error())
 				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
@@ -76,8 +74,8 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 		for _, v := range sensors {
 
 			log.Info(v)
-			stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name,c2netname,active) values(?,?,?,?,?,?,?)")
-			_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name, v.C2netname, v.Active)
+			stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name) values(?,?,?,?,?)")
+			_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name)
 			if err != nil {
 				log.Info("entered error")
 				log.Error(err.Error()) // proper error handling instead of panic in your app
