@@ -355,8 +355,11 @@ img.emoji {
 				str+='<td data-name="del"><button name"del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 				
-				$("#name"+i).val(all_sensors[i].idsensor);  
-				$("#mail"+i).val(all_sensors[i].name);  
+				$("#name"+i).val(all_sensors[i].nodeid);  
+				$("#mail"+i).val(all_sensors[i].typeid);  
+				$("#typename"+i).val(all_sensors[i].type_name);  
+				$("#sensorid"+i).val(all_sensors[i].id);  
+				$("#sensorname"+i).val(all_sensors[i].name);  
 
 	}
 
@@ -395,23 +398,35 @@ $(document).ready(function() {
 $("#save").on("click",function(){
 	var out =[];
 	var obj = {};
-	var idsc2net=[]; 
+	var nodesid=[]; 
 	$('[id^=name]').each(function(arr){
-		idsc2net.push($(this).val())
+		nodesid.push($(this).val())
 	});
-	var idsnodes=[]
+	var typeid=[]
 	$('[id^=mail]').each(function(arr){
-		idsnodes.push($(this).val())
+		typeid.push($(this).val())
 	});
-	
-	var x = ["13","13","10","01"]
-	var y = ["C1","A1","B1","FF"]
+	var typename=[]; 
+	$('[id^=typename]').each(function(arr){
+		typename.push($(this).val())
+	});
+	var ids=[]
+	$('[id^=sensorid]').each(function(arr){
+		ids.push($(this).val())
+	});
+	var names=[]
+	$('[id^=sensorname]').each(function(arr){
+		names.push($(this).val())
+	});
+
 	
 	for (var i = 0; i < idsc2net.length ; i++){
 			if (idsc2net[i]!=""){	
-			obj.idsensor= idsc2net[i];
-			obj.name = idsnodes[i];
-		        obj.idc2net = y[parseInt(x.indexOf(idsc2net[i]))] 	
+			obj.nodeid= nodesid[i];
+			obj.typeid = typeid[i];
+		        obj.type_name = typename[i]; 	
+		        obj.id = ids[i]; 	
+		        obj.name = names[i]; 	
 			out.push(obj);
 			obj = {};
 			}
