@@ -15,25 +15,6 @@
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-				<link rel="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-touch-icon" sizes="57x57" href="https://chaptr.studio/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/favicon-16x16.png">
-		<link rel="manifest" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/manifest.json">
-		<meta name="msapplication-TileColor" content="#000">
-		<meta name="msapplication-TileImage" content="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/ms-icon-144x144.png">
-		<meta name="theme-color" content="#000">
-
-
 				
 <!-- This site is optimized with the Yoast SEO plugin v4.9 - https://yoast.com/wordpress/plugins/seo/ -->
 <meta name="description" content="">
@@ -101,6 +82,7 @@ img.emoji {
   <div class="inner">
         <div class="project--planner-review loading">
       <div class="ty-message">
+        Thank you <span id="review--name">Jane</span>, somebody will be in touch<br> about your <div id="review--services"><span id="branding">branding</span></div> project soon.
       </div>
     </div>
   </div>
@@ -238,6 +220,7 @@ img.emoji {
 				<li><a href="PlaceCert.html">Provide Certificates</a></li>
 				<li><a href="SetHubID.html">Set Hub ID</a></li>
 				<li><a href="Sensor.html">Define Sensor</a></li>
+				<li><a href="Network.html">Define Network</a></li>
 				<li><a href="Power.html">Power</a></li>
 				<li><a href="ListComm.html">Communication Protocols</a></li>
 			</ul>
@@ -249,6 +232,7 @@ img.emoji {
 				<li><a href="PlaceCert.html" data-loading-title="Place the Certificate Downloaded From C2NeT Platform.">Provide Certificates</a></li>
 				<li><a href="SetHubID.html" data-loading-title="Set Hub ID assigned by C2NET Platform.">Set Hub ID</a></li>
 				<li><a href="Sensor.html" data-loading-title="Add,Select,Remove Sensing Elements.">Define Sensor</a></li>
+				<li><a href="Network.html" data-loading-title="Add,Select,Remove Sensing Elements.">Define Network</a></li>
 				<li><a href="Power.html" data-loading-title="Listing Active Sensing Elements.">Power</a></li>
 				<li><a href="ListComm.html" data-loading-title="List Available Communication Protocols">Communication Protocols</a></li>
 			</ul>
@@ -260,10 +244,10 @@ img.emoji {
 		</div>
 	</nav>
 	<div class="alert alert-success alert-dismissible fade in text-center hidden" role="alert" id="success">
-  <strong>Well done!</strong> You successfully updated <a href="#" class="alert-link"> the defined Sensors</a>.
+  <strong>Well done!</strong> You successfully updated <a href="#" class="alert-link">sensing elements!</a>.
 	</div>	  
 <div class="alert alert-danger alert-dismissible fade in text-center hidden" role="alert" id="failure">
-  <strong>UHMMM!</strong> Something bad happened <a href="#" class="alert-link">here:(</a>.
+  <strong>UHMMM!</strong> Something bad happened <a href="#" class="alert-link">in our server :(</a>.
 	</div>	
 	<section class="full" id="page--hero">
 
@@ -311,17 +295,13 @@ img.emoji {
 
 <script type="text/javascript">
 
-
-	var titles = ["NodeID","Sensor Type ID","Sensor Type Name","Sensor ID","Sensor Name"];
+	var titles = ["Sensor Type ID","Sensor Type Name"];
 	$('#head').append("<tr>");
 	for (var i = 0; i < titles.length; i++){
 		$('#head').append("<th class=\"text-center\">"+titles[i]+"</th>");
 	}
-
-
 	$('#head').append("<th class=\"text-center\" style=\"border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;\"></th></tr>");
 	
-
 	
 	jQuery.extend({
         getValues: function(url) {
@@ -336,35 +316,23 @@ img.emoji {
 	       	return result;
     	}		
 	});
-	var all_sensors = $.getValues("/allsensors");
+	var all_sensors = $.getValues("/allalive");
 	
-
-
+	while(all_sensors==null){}
 	$('#body').append("<tr id=\"addr0\" data-id=\"0\" class=\"hidden\">");
-	if(all_sensors!=null)
 	for (var i = 0;i<all_sensors.length; i++){
 				
 					var str = '';
-
 				str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
-				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Sensor Type Id.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"typename\"><input id=\"typename"+i+"\" type=\"text\" name='typename"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+i+"\" type=\"text\" name='sensorid"+i+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='Sensor Name.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID that Uniquely identifies this type of sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
 				str+='<td data-name="del"><button name"del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 				
-				$("#name"+i).val(all_sensors[i].nodeid);  
-				$("#mail"+i).val(all_sensors[i].typeid);  
-				$("#typename"+i).val(all_sensors[i].type_name);  
-				$("#sensorid"+i).val(all_sensors[i].id);  
-				$("#sensorname"+i).val(all_sensors[i].name);  
-
+				$("#name"+i).val(all_sensors[i].idsensor);  
+				$("#mail"+i).val(all_sensors[i].name);  
 	}
-
 	$("#addr0").hide();
-
 $(document).ready(function() {
     $("#add_row").on("click", function() {
         // Dynamic Rows Code
@@ -380,12 +348,9 @@ $(document).ready(function() {
        	console.log(newid); 
         		var str = '';
 			str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
-					str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='ID that identifies this type of Sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"typename\"><input id=\"typename"+i+"\" type=\"text\" name='typename"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+i+"\" type=\"text\" name='sensorid"+i+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='This Sensor Name.' class=\"form-control\"/></td>\n";
-				
+				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID that identifies this type of sensor. Must be unique!' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Name of this Type of Sensor' class=\"form-control\"/></td>\n";
+					
 			str+='<td data-name="del"><button name"del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 	$("td button.row-remove").on("click", function(){
@@ -393,71 +358,49 @@ $(document).ready(function() {
 });
 	
 	});
-
-
 $("#save").on("click",function(){
 	var out =[];
 	var obj = {};
-	var nodesid=[]; 
+	var idsc2net=[]; 
 	$('[id^=name]').each(function(arr){
-		nodesid.push($(this).val())
+		idsc2net.push($(this).val())
 	});
-	var typeid=[]
+	var idsnodes=[]
 	$('[id^=mail]').each(function(arr){
-		typeid.push($(this).val())
+		idsnodes.push($(this).val())
 	});
-	var typename=[]; 
-	$('[id^=typename]').each(function(arr){
-		typename.push($(this).val())
-	});
-	var ids=[]
-	$('[id^=sensorid]').each(function(arr){
-		ids.push($(this).val())
-	});
-	var names=[]
-	$('[id^=sensorname]').each(function(arr){
-		names.push($(this).val())
-	});
-
 	
-	for (var i = 0; i < nodesid.length ; i++){
-			obj.nodeid= nodesid[i];
-			obj.typeid = typeid[i];
-		        obj.type_name = typename[i]; 	
-		        obj.id = ids[i]; 	
-		        obj.name = names[i]; 	
+	
+	for (var i = 0; i < idsc2net.length ; i++){
+			if (idsc2net[i]!=""){	
+			obj.idsensor= idsc2net[i];
+			obj.name = idsnodes[i];
 			out.push(obj);
 			obj = {};
+			}
 			
-
 	}
 	
 	console.log(out);
 	$.ajax({
-    		'url' : '/sensor',
+    		'url' : '/alive',
     		'type' : 'POST',
 		 contentType: 'application/json',
 		 data: JSON.stringify(out), 
 		'success' : function(data) {
 			$("#success").removeClass('hidden');
 			setTimeout(function() { $("#success").addClass('hidden');}, 4000);
-
 		},
 		'failure': function(data){
 			$("#failure").removeClass('hidden');
 			setTimeout(function() { $("#failure").addClass('hidden');}, 4000);
-
 		},
 	});
 });
-
-
     
 $("td button.row-remove").on("click", function(){
 	$(this).closest("tr").remove();
 });
-
-
 });
 
 </script>
