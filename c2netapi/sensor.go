@@ -17,7 +17,7 @@ import (
 type Sensor struct {
 	Nodeid   string `json:"nodeid"`
 	Typeid   string `json:"typeid"`
-	TypeName string `json:"type_name"`
+	Typename string `json:"type_name"`
 	Id       string `json:"id"`
 	Name     string `json:"name"`
 }
@@ -40,7 +40,7 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 		for rows.Next() {
 
 			var s Sensor
-			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.TypeName, &s.Id, &s.Name)
+			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.Typename, &s.Id, &s.Name)
 			if err != nil {
 				log.Error(err.Error())
 				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})

@@ -336,7 +336,7 @@ img.emoji {
 	       	return result;
     	}		
 	});
-	var all_sensors = $.getValues("/allalive");
+	var all_sensors = $.getValues("/allsensors");
 	
 
 
@@ -420,8 +420,7 @@ $("#save").on("click",function(){
 	});
 
 	
-	for (var i = 0; i < idsc2net.length ; i++){
-			if (idsc2net[i]!=""){	
+	for (var i = 0; i < nodesid.length ; i++){
 			obj.nodeid= nodesid[i];
 			obj.typeid = typeid[i];
 		        obj.type_name = typename[i]; 	
@@ -429,14 +428,13 @@ $("#save").on("click",function(){
 		        obj.name = names[i]; 	
 			out.push(obj);
 			obj = {};
-			}
 			
 
 	}
 	
 	console.log(out);
 	$.ajax({
-    		'url' : '/alive',
+    		'url' : '/sensor',
     		'type' : 'POST',
 		 contentType: 'application/json',
 		 data: JSON.stringify(out), 
