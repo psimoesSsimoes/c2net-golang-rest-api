@@ -15,9 +15,11 @@ import (
  * sensor placed on an location
  */
 type Sensor struct {
-	Idsensor string `json:"id"`
-	Name     string `json:"name"`
-	Tipo     string `json:"tipo"`
+	Nodeid string
+	Typeid string
+	TypeName string
+	Id string
+	Name string
 }
 
 /**
@@ -33,12 +35,12 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 
 		var sensors []Sensor
 		log.Info("aRRIVED HERE")
-		rows, err := db.Query("SELECT * FROM sensor")
+		rows, err := db.Query("SELECT * FROM sensors")
 
 		for rows.Next() {
 
 			var s Sensor
-			err = rows.Scan(&s.Idsensor, &s.Name, &s.Tipo)
+			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.TypeName, &s.Id, &s.Name)
 			if err != nil {
 				log.Error(err.Error())
 				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
@@ -71,8 +73,8 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 		for _, v := range sensors {
 
 			log.Info(v)
-			stmt, _ := db.Prepare("INSERT INTO sensor(id,name,tipo) values(?,?,?)")
-			_, err = stmt.Exec(v.Idsensor, v.Name, v.Tipo)
+			stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name) values(?,?,?,?,?)")
+			_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name)
 			if err != nil {
 				log.Info("entered error")
 				log.Error(err.Error()) // proper error handling instead of panic in your app
@@ -96,7 +98,7 @@ func DeleteSensor(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	idToDelete := vars["id"]
 
-	stmt, _ := db.Prepare("DELETE FROM sensor WHERE id = ?")
+	stmt, _ := db.Prepare("DELETE FROM sensors WHERE name = ?")
 	if err != nil {
 
 		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor in database"})
@@ -121,7 +123,7 @@ func DeleteAllSensors(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
 	} else {
 
-		stmt, err := db.Prepare("DELETE FROM sensor")
+		stmt, err := db.Prepare("DELETE FROM sensors")
 		if err != nil {
 			log.Error(err)
 			json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't prepare delete on c2net sqlite db"})

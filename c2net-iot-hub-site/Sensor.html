@@ -312,7 +312,7 @@ img.emoji {
 <script type="text/javascript">
 
 
-	var titles = ["NodeID","Sensor Type ID","Sensor Type Name","Sensor Name"];
+	var titles = ["NodeID","Sensor Type ID","Sensor Type Name","Sensor ID","Sensor Name"];
 	$('#head').append("<tr>");
 	for (var i = 0; i < titles.length; i++){
 		$('#head').append("<th class=\"text-center\">"+titles[i]+"</th>");
@@ -350,6 +350,7 @@ img.emoji {
 				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Sensor Type Id.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"typename\"><input id=\"typename"+i+"\" type=\"text\" name='typename"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+i+"\" type=\"text\" name='sensorid"+i+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='Sensor Name.' class=\"form-control\"/></td>\n";
 				str+='<td data-name="del"><button name"del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
@@ -379,6 +380,7 @@ $(document).ready(function() {
 					str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='ID that identifies this type of Sensor.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"typename\"><input id=\"typename"+i+"\" type=\"text\" name='typename"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+i+"\" type=\"text\" name='sensorid"+i+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='This Sensor Name.' class=\"form-control\"/></td>\n";
 				
 			str+='<td data-name="del"><button name"del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
