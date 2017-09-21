@@ -311,6 +311,7 @@ img.emoji {
     		'type' : 'GET',
     		 async: false,
 		'success' : function(data) {
+			console.log(data);
 			result = JSON.parse(data);
 		}});
 	       	return result;

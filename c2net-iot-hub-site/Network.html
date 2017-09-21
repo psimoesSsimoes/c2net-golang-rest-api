@@ -313,8 +313,7 @@ img.emoji {
 
 <script type="text/javascript">
 
-
-	var titles = ["NodeID","Sensor Type ID","Sensor Type Name","Sensor ID","Sensor Name"];
+	var titles = ["NodeID","Sensor Type","Sensor ID","Sensor Name","Frequency"];
 	$('#head').append("<tr>");
 	for (var i = 0; i < titles.length; i++){
 		$('#head').append("<th class=\"text-center\">"+titles[i]+"</th>");
@@ -333,13 +332,20 @@ img.emoji {
     		'type' : 'GET',
     		 async: false,
 		'success' : function(data) {
+			console.log(data);
 			result = JSON.parse(data);
 		}});
 	       	return result;
     	}		
 	});
 	var all_sensors = $.getValues("/allsensors");
-	
+	var all_alive =	$.getValues("/allalive");
+	var options="";
+	var flag = false;
+	for(var f=0; f < all_alive.length; f++){
+		options+=('<option value="'+f+'">'+all_alive[f].name+'</option>')
+	}
+
 
 
 	$('#body').append("<tr id=\"addr0\" data-id=\"0\" class=\"hidden\">");
@@ -350,18 +356,17 @@ img.emoji {
 
 				str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
 				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Sensor Type Id.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"typename\"><input id=\"typename"+i+"\" type=\"text\" name='typename"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
+				str+=' <td><select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="typesensor'+i+'"><option selected>Type Of Sensor</option></select></td>'
 				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+i+"\" type=\"text\" name='sensorid"+i+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='Sensor Name.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"freq\"><input id=\"freq"+i+"\" type=\"text\" name='freq"+i+"'  placeholder='Frequency of collection of Data.' class=\"form-control\"/></td>\n";
 				str+='<td data-name="del"><button name"del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 				
 				$("#name"+i).val(all_sensors[i].nodeid);  
-				$("#mail"+i).val(all_sensors[i].typeid);  
-				$("#typename"+i).val(all_sensors[i].type_name);  
 				$("#sensorid"+i).val(all_sensors[i].id);  
-				$("#sensorname"+i).val(all_sensors[i].name);  
+				$("#sensorname"+i).val(all_sensors[i].name);				
+				$("#typesensor"+i).append(options);
 
 	}
 
@@ -381,15 +386,18 @@ $(document).ready(function() {
         newid++;
        	console.log(newid); 
         		var str = '';
-			str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
-					str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='ID that identifies this type of Sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"typename\"><input id=\"typename"+i+"\" type=\"text\" name='typename"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+i+"\" type=\"text\" name='sensorid"+i+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='This Sensor Name.' class=\"form-control\"/></td>\n";
+			str+="<tr id=\"addr"+ newid +"\" data-id=\""+newid+" \">\n";
+					str+="<td data-name=\"name\"><input id=\"name"+newid+"\" type=\"text\" name='name"+newid+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
+				str+=' <td><select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="typesensor'+newid+'"><option selected>Type Of Sensor</option></select></td>'
+				
+				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+newid+"\" type=\"text\" name='sensorid"+newid+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+newid+"\" type=\"text\" name='sensorname"+newid+"'  placeholder='This Sensor Name.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"freq\"><input id=\"freq"+newid+"\" type=\"text\" name='freq"+newid+"'  placeholder='Frequency of collection of Data.' class=\"form-control\"/></td>\n";
 				
 			str+='<td data-name="del"><button name"del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
+				
+				$("#typesensor"+newid).append(options);
 	$("td button.row-remove").on("click", function(){
 	$(this).closest("tr").remove();
 });
@@ -398,19 +406,29 @@ $(document).ready(function() {
 
 
 $("#save").on("click",function(){
+	
+//	$( "#myselect option:selected" ).text();
+	var typeid=[];
+	var typename=[];
+	$('[id^=typesensor] option:selected').each(function(){
+		typename.push($(this).text());
+		for (var i = 0; i < all_alive ; i++){
+			if ($(this).text()==all_alive[i].name){
+				typeid.push(all_alive[i].id);
+			}
+		}
+	
+	})
 	var out =[];
 	var obj = {};
 	var nodesid=[]; 
 	$('[id^=name]').each(function(arr){
 		nodesid.push($(this).val())
 	});
-	var typeid=[]
-	$('[id^=mail]').each(function(arr){
-		typeid.push($(this).val())
-	});
-	var typename=[]; 
-	$('[id^=typename]').each(function(arr){
-		typename.push($(this).val())
+
+	var freq=[]; 
+	$('[id^=freq]').each(function(arr){
+		freq.push($(this).val())
 	});
 	var ids=[]
 	$('[id^=sensorid]').each(function(arr){
@@ -421,13 +439,14 @@ $("#save").on("click",function(){
 		names.push($(this).val())
 	});
 
-	
+dafdsaf
 	for (var i = 0; i < nodesid.length ; i++){
 			obj.nodeid= nodesid[i];
-			obj.typeid = typeid[i];
+			obj. typeid = typeid[i];
 		        obj.type_name = typename[i]; 	
 		        obj.id = ids[i]; 	
 		        obj.name = names[i]; 	
+		        obj.freq = freq[i]; 	
 			out.push(obj);
 			obj = {};
 			
@@ -460,6 +479,12 @@ $("td button.row-remove").on("click", function(){
 });
 
 
+
+});
+
+$("li").on("click",function() {
+	console.log("atum");
+	console.log($(this).text());
 });
 
 </script>
