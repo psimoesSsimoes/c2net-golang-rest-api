@@ -414,7 +414,7 @@ $("#save").on("click",function(){
 		typename.push($(this).text());
 		for (var i = 0; i < all_alive ; i++){
 			if ($(this).text()==all_alive[i].name){
-				typeid.push(all_alive[i].id);
+				typeid.push(all_alive[i].idsensor);
 			}
 		}
 	
@@ -439,7 +439,6 @@ $("#save").on("click",function(){
 		names.push($(this).val())
 	});
 
-dafdsaf
 	for (var i = 0; i < nodesid.length ; i++){
 			obj.nodeid= nodesid[i];
 			obj. typeid = typeid[i];
