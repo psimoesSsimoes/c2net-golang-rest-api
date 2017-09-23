@@ -332,7 +332,6 @@ img.emoji {
     		'type' : 'GET',
     		 async: false,
 		'success' : function(data) {
-			console.log(data);
 			result = JSON.parse(data);
 		}});
 	       	return result;
@@ -356,7 +355,7 @@ img.emoji {
 
 				str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
 				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
-				str+=' <td><select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="typesensor'+i+'"><option selected>Type Of Sensor</option></select></td>'
+				str+=' <td><select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="typesensor'+i+'"><option selected></option></select></td>'
 				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+i+"\" type=\"text\" name='sensorid"+i+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='Sensor Name.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"freq\"><input id=\"freq"+i+"\" type=\"text\" name='freq"+i+"'  placeholder='Frequency of collection of Data.' class=\"form-control\"/></td>\n";
@@ -388,7 +387,7 @@ $(document).ready(function() {
         		var str = '';
 			str+="<tr id=\"addr"+ newid +"\" data-id=\""+newid+" \">\n";
 					str+="<td data-name=\"name\"><input id=\"name"+newid+"\" type=\"text\" name='name"+newid+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
-				str+=' <td><select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="typesensor'+newid+'"><option selected>Type Of Sensor</option></select></td>'
+				str+=' <td><select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="typesensor'+newid+'"><option selected></option></select></td>'
 				
 				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+newid+"\" type=\"text\" name='sensorid"+newid+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+newid+"\" type=\"text\" name='sensorname"+newid+"'  placeholder='This Sensor Name.' class=\"form-control\"/></td>\n";
@@ -412,7 +411,7 @@ $("#save").on("click",function(){
 	var typename=[];
 	$('[id^=typesensor] option:selected').each(function(){
 		typename.push($(this).text());
-		for (var i = 0; i < all_alive ; i++){
+		for (var i = 0; i < all_alive.length ; i++){
 			if ($(this).text()==all_alive[i].name){
 				typeid.push(all_alive[i].idsensor);
 			}
@@ -441,7 +440,7 @@ $("#save").on("click",function(){
 
 	for (var i = 0; i < nodesid.length ; i++){
 			obj.nodeid= nodesid[i];
-			obj. typeid = typeid[i];
+			obj.typeid = typeid[i];
 		        obj.type_name = typename[i]; 	
 		        obj.id = ids[i]; 	
 		        obj.name = names[i]; 	
@@ -479,11 +478,6 @@ $("td button.row-remove").on("click", function(){
 
 
 
-});
-
-$("li").on("click",function() {
-	console.log("atum");
-	console.log($(this).text());
 });
 
 </script>
