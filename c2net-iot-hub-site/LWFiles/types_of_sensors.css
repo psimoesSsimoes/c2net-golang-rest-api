@@ -1,0 +1,16 @@
+/* LIST #5 */
+.container{
+    display: flex;
+}
+.fixed{
+    width: 200px;
+}
+.flex-item{
+    flex-grow: 1;
+}
+
+#list5 { color:#eee;text-align: center; }
+#list5 ol { font-size:18px; }
+#list5 ol li { }
+#list5 ol li ol { list-style-image: url("../images/nested.png"); padding:5px 0 5px 18px; font-size:15px; }
+#list5 ol li ol li { color:#bfe1f1; height:15px; margin-left:10px; }

@@ -50,7 +50,8 @@ img.emoji {
 <link rel="stylesheet" id="stylesheet-css" href="LWFiles/style.css" type="text/css" media="all">
 <link rel="stylesheet" id="font-awesome-css" href="LWFiles/font-awesome.css" type="text/css" media="all">
 <link rel="stylesheet" id="lightbox-stylesheet-css" href="LWFiles/lightcase.css" type="text/css" media="all">
-<link rel="stylesheet" href="LWFiles/sensing.css" type="text/css" media="all">
+<!--<link rel="stylesheet" href="LWFiles/sensing.css" type="text/css" media="all">-->
+<link rel="stylesheet" href="LWFiles/types_of_sensors.css" type="text/css" media="all">
 <script type="text/javascript" src="LWFiles/jquery.js"></script>
 <script type="text/javascript" src="LWFiles/jquery-migrate.js"></script>
 <script type="text/javascript" src="LWFiles/modernizr.js"></script>
@@ -268,8 +269,59 @@ img.emoji {
 	<a id="save" class="btn btn-primary pull-right">Save</a>
 
 </div>	
-		-->
-<div id="list5">
+-->
+<div class="container">
+<div id="list5" class="fixed">
+   <ol>
+      <li>Google
+         <ol>
+            <li>Picasa</li>
+            <li>Feedburner</li>
+            <li>Youtube</li>
+         </ol>
+      </li>
+      <li>Microsoft
+         <ol>
+            <li>Corel Corporation</li>
+            <li>Zignals</li>
+            <li>ByteTaxi</li>
+         </ol>
+      </li>
+      <li>Yahoo!
+         <ol>
+            <li>Xoopit</li>
+            <li>BuzzTracker</li>
+            <li>MyBlogLog</li>
+         </ol>
+      </li>
+   </ol>
+</div>
+<div id="list5" class="flex-item">
+   <ol>
+      <li>Google
+         <ol>
+            <li>Picasa</li>
+            <li>Feedburner</li>
+            <li>Youtube</li>
+         </ol>
+      </li>
+      <li>Microsoft
+         <ol>
+            <li>Corel Corporation</li>
+            <li>Zignals</li>
+            <li>ByteTaxi</li>
+         </ol>
+      </li>
+      <li>Yahoo!
+         <ol>
+            <li>Xoopit</li>
+            <li>BuzzTracker</li>
+            <li>MyBlogLog</li>
+         </ol>
+      </li>
+   </ol>
+</div>
+<div id="list5" class="flex-item">
    <ol>
       <li>Google
          <ol>
@@ -295,6 +347,7 @@ img.emoji {
    </ol>
 </div>
 
+</div>
 
 	</section>
 <footer id="global--footer">
@@ -321,115 +374,33 @@ img.emoji {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-
-	var titles = ["Sensor Type ID","Sensor Type Name"];
-	$('#head').append("<tr>");
-	for (var i = 0; i < titles.length; i++){
-		$('#head').append("<th class=\"text-center\">"+titles[i]+"</th>");
-	}
-	$('#head').append("<th class=\"text-center\" style=\"border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;\"></th></tr>");
-	
-	
-	jQuery.extend({
-        getValues: function(url) {
-        	var result = null;
-        	$.ajax({
-    		'url' : url,
-    		'type' : 'GET',
-    		 async: false,
-		'success' : function(data) {
-			console.log(data);
-			result = JSON.parse(data);
-		}});
-	       	return result;
-    	}		
-	});
-	var all_sensors = $.getValues("/allalive");
-	
-	while(all_sensors==null){}
-	$('#body').append("<tr id=\"addr0\" data-id=\"0\" class=\"hidden\">");
-	for (var i = 0;i<all_sensors.length; i++){
-				
-					var str = '';
-				str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
-				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID that Uniquely identifies this type of sensor.' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Name of this Type of Sensor.' class=\"form-control\"/></td>\n";
-				str+='<td data-name="del"><button name"del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
-				$('#body').append(str);
-				
-				$("#name"+i).val(all_sensors[i].idsensor);  
-				$("#mail"+i).val(all_sensors[i].name);  
-	}
-	$("#addr0").hide();
-$(document).ready(function() {
-    $("#add_row").on("click", function() {
-        // Dynamic Rows Code
-        
-        // Get max row id and set new id
-        var newid = 0;
-        $.each($("#tab_logic tr"), function() {
-            if (parseInt($(this).data("id")) > newid) {
-                newid = parseInt($(this).data("id"));
-            }
-        });
-        newid++;
-       	console.log(newid); 
-        		var str = '';
-			str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
-				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID that identifies this type of sensor. Must be unique!' class=\"form-control\"/></td>\n";
-				str+="<td data-name=\"mail\"><input id=\"mail"+i+"\" type=\"text\" name='mail"+i+"'  placeholder='Name of this Type of Sensor' class=\"form-control\"/></td>\n";
-					
-			str+='<td data-name="del"><button name"del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
-				$('#body').append(str);
-	$("td button.row-remove").on("click", function(){
-	$(this).closest("tr").remove();
-});
-	
-	});
-$("#save").on("click",function(){
-	var out =[];
-	var obj = {};
-	var idsc2net=[]; 
-	$('[id^=name]').each(function(arr){
-		idsc2net.push($(this).val())
-	});
-	var idsnodes=[]
-	$('[id^=mail]').each(function(arr){
-		idsnodes.push($(this).val())
-	});
-	
-	
-	for (var i = 0; i < idsc2net.length ; i++){
-			if (idsc2net[i]!=""){	
-			obj.idsensor= idsc2net[i];
-			obj.name = idsnodes[i];
-			out.push(obj);
-			obj = {};
-			}
-			
-	}
-	
-	console.log(out);
-	$.ajax({
-    		'url' : '/alive',
-    		'type' : 'POST',
-		 contentType: 'application/json',
-		 data: JSON.stringify(out), 
-		'success' : function(data) {
-			$("#success").removeClass('hidden');
-			setTimeout(function() { $("#success").addClass('hidden');}, 4000);
-		},
-		'failure': function(data){
-			$("#failure").removeClass('hidden');
-			setTimeout(function() { $("#failure").addClass('hidden');}, 4000);
-		},
-	});
-});
-    
-$("td button.row-remove").on("click", function(){
-	$(this).closest("tr").remove();
-});
-});
+/**
+<div id="list5" class="flex-item">
+   <ol>
+      <li>Google
+         <ol>
+            <li>Picasa</li>
+            <li>Feedburner</li>
+            <li>Youtube</li>
+         </ol>
+      </li>
+      <li>Microsoft
+         <ol>
+            <li>Corel Corporation</li>
+            <li>Zignals</li>
+            <li>ByteTaxi</li>
+         </ol>
+      </li>
+      <li>Yahoo!
+         <ol>
+            <li>Xoopit</li>
+            <li>BuzzTracker</li>
+            <li>MyBlogLog</li>
+         </ol>
+      </li>
+   </ol>
+</div>
+*/
 
 </script>
 
