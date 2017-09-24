@@ -447,7 +447,7 @@ $(document).ready(function(){
 			}
 			console.log(ids);
 		 	$.ajax({
-    				'url' : '/sensor',
+    				'url' : '/update',
     				'type' : 'POST',
 				'data': JSON.stringify(ids),
     				'success' : function(data) {
