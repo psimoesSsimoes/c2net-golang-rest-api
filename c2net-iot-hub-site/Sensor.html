@@ -52,6 +52,9 @@ img.emoji {
 <link rel="stylesheet" id="lightbox-stylesheet-css" href="LWFiles/lightcase.css" type="text/css" media="all">
 <!--<link rel="stylesheet" href="LWFiles/sensing.css" type="text/css" media="all">-->
 <link rel="stylesheet" href="LWFiles/types_of_sensors.css" type="text/css" media="all">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="LWFiles/materialmenu.css">
+
 <script type="text/javascript" src="LWFiles/jquery.js"></script>
 <script type="text/javascript" src="LWFiles/jquery-migrate.js"></script>
 <script type="text/javascript" src="LWFiles/modernizr.js"></script>
@@ -252,6 +255,11 @@ img.emoji {
 	</div>
 	<section class="full" id="page--hero">
 
+					<div class="menu-button"><i class="zmdi zmdi-apps"></i>
+	<a id="plus" target="blank"><i class="zmdi zmdi-save"></i></a>
+	<!--<a id="minus" target="blank"><i class="zmdi zmdi-minus"></i></a>-->
+				</div>
+
 		<!--
 	  List
 <div class="container">
@@ -289,64 +297,12 @@ img.emoji {
 <script type="text/javascript" src="LWFiles/debug.js"></script>
 <script type="text/javascript" src="LWFiles/scripts-min.js"></script>
 <script type="text/javascript" src="LWFiles/wp-embed.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.1/TweenMax.min.js"></script>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-/**
-<div class="container">
-<div id="list5" class="fixed">
-   <ol>
-      <li>Google
-         <ol>
-            <li>Picasa</li>
-            <li>Feedburner</li>
-            <li>Youtube</li>
-         </ol>
-      </li>
-      <li>Microsoft
-         <ol>
-            <li>Corel Corporation</li>
-            <li>Zignals</li>
-            <li>ByteTaxi</li>
-         </ol>
-      </li>
-      <li>Yahoo!
-         <ol>
-            <li>Xoopit</li>
-            <li>BuzzTracker</li>
-            <li>MyBlogLog</li>
-         </ol>
-      </li>
-   </ol>
-</div>
-<div id="list5" class="flex-item">
-   <ol>
-      <li>Google
-         <ol>
-            <li>Picasa</li>
-            <li>Feedburner</li>
-            <li>Youtube</li>
-         </ol>
-      </li>
-      <li>Microsoft
-         <ol>
-            <li>Corel Corporation</li>
-            <li>Zignals</li>
-            <li>ByteTaxi</li>
-         </ol>
-      </li>
-      <li>Yahoo!
-         <ol>
-            <li>Xoopit</li>
-            <li>BuzzTracker</li>
-            <li>MyBlogLog</li>
-         </ol>
-      </li>
-   </ol>
-</div>
-*/
+
 	$.ajax({
     		'url' : '/allcategories',
     		'type' : 'GET',
@@ -414,7 +370,7 @@ img.emoji {
 			   console.log(data)
 			arr = JSON.parse(data);
 			for(var i=0 ; i < arr.length ;i++){
-			   var li='<ol><li>'+arr[i].sensor+' : '+arr[i].code+'</li></ol><input type="checkbox" name="vehicle" value="Bike">'
+			   var li='<ol><li>'+arr[i].sensor+' : '+arr[i].code+'</li></ol><input type="checkbox" id="'+arr[i].code+'" value="Bike">'
 			if (arr[i].cat.split(',').length > 1){
 				$('#'+arr[i].cat.split(',')[0]).append(li);
 			}else if (arr[i].cat.split(' ').length > 1){
@@ -426,6 +382,93 @@ img.emoji {
 			}
 			}
 		}});
+
+
+$(document).ready(function(){
+  var $obj=$(".modal")
+  		  ,$overlay=$(".modal-overlay")
+    ,blur=$("#blur-filter").get(0)
+  ;
+  
+  function setBlur(v){
+    blur.setAttribute("stdDeviation", v);
+  }
+  function getPos(){
+    return $obj.position();
+  }
+  
+  var lastPos=getPos();
+  function update(){
+    var pos=getPos();
+    var limit=20;
+    var dx=Math.min(limit,Math.abs(pos.left-lastPos.left)*0.5);
+    var dy=Math.min(limit,Math.abs(pos.top-lastPos.top)*0.5);
+    setBlur(dx+","+dy);
+    
+    lastPos=pos;
+    requestAnimationFrame(update);
+  }
+  update();
+  
+  var isOpen=false;
+  	function openModal(){
+      /*$overlay.css({
+        display:"block"
+      })*/
+      TweenMax.to($overlay,0.1,{autoAlpha:1});
+      
+      TweenMax.fromTo($obj,0.6,{y:-($(window).height()+$obj.height())},{delay:0.2,y:"0%",ease:Elastic.easeOut,easeParams:[1.1,0.7],force3D:true});
+  }
+  function closeModal(){
+    TweenMax.to($overlay,0.1,{delay:0.55,autoAlpha:0});
+    TweenMax.to($obj,0.55,{y:$(window).height()+$obj.height(),ease:Back.easeIn,force3D:true});
+  }
+  $("#plus").click(function(){
+	    //openModal();
+	  	console.log("clicked");
+	  	var x = []
+	  	if ($('#serial').is(':checked')){
+			y={}
+			y.name = "DataListenerSerialPort";
+			x.push(y);
+  		}
+		if ($('#zig').is(':checked')){
+	  		y={}
+			y.name = "DataListenerZigBee";
+			x.push(y);
+  		}
+		if ($('#sock').is(':checked')){
+			y={}
+			y.name = "DataListenerSocketUdp";
+			x.push(y);
+
+  		}
+		if ($('#can').is(':checked')){
+			y={}
+			y.name = "DataListenerCanBus";
+			x.push(y);
+
+  		}
+
+		console.log(x);
+		 $.ajax({
+    			'url' : '/comm',
+    			'type' : 'POST',
+			'data': JSON.stringify(x),
+    			'success' : function(data) {
+	    			console.log(data);
+				alert("updating succefully and restarting hub");
+			}});
+	  
+
+
+  })
+  $(".close-modal,.modal-overlay,.input-submit").click(function(){
+    closeModal();
+  })
+  
+})
+
 
 </script>
 
