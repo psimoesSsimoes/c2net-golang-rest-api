@@ -83,6 +83,35 @@ func AllSelected(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func AllTypes(w http.ResponseWriter, r *http.Request) {
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
+	defer db.Close()
+
+	if err != nil {
+		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
+	} else {
+
+		var sensors []TypeSensor
+		log.Info("aRRIVED HERE")
+		rows, err := db.Query("SELECT * FROM types_of_sensors")
+
+		for rows.Next() {
+
+			var s TypeSensor
+			err = rows.Scan(&s.Cat, &s.Code, &s.Sensor, &s.Selected)
+			if err != nil {
+				log.Error(err.Error())
+				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
+				return
+			}
+			sensors = append(sensors, s)
+		}
+		log.Info(sensors)
+		json.NewEncoder(w).Encode(sensors)
+	}
+
+}
+
 func UpdateSelected(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
@@ -115,5 +144,3 @@ func UpdateSelected(w http.ResponseWriter, r *http.Request) {
 
 	}
 }
-
-

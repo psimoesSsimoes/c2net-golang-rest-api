@@ -27,6 +27,7 @@ var routes = Routes{
 	Route{"UpdateTYPEsensor", "POST", "/update", UpdateSelected},
 	Route{"AllSelected", "GET", "/allselected", AllSelected},
 	Route{"AllCategories", "GET", "/allcategories", AllCategories},
+	Route{"AllTypesSensors", "GET", "/alltypes", AllTypes},
 	Route{"InsertHubId", "POST", "/hub", InsertHubId},
 	Route{"AllListeners", "GET", "/comm", AllCommListeners},
 	Route{"UpdateListeners", "POST", "/comm", UpdateCommListeners},
