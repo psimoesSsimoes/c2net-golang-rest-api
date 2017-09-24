@@ -363,7 +363,7 @@ img.emoji {
 			$('#page--hero').append(list5);
 		}});
 	$.ajax({
-    		'url' : '/allsensors',
+    		'url' : '/alltypes',
     		'type' : 'GET',
 		 async: false,
 		'success' : function(data) {
@@ -462,15 +462,6 @@ $(document).ready(function(){
 		}
 
 		console.log(x);
-		/** $.ajax({
-    			'url' : '/comm',
-    			'type' : 'POST',
-			'data': JSON.stringify(x),
-    			'success' : function(data) {
-	    			console.log(data);
-				alert("updating succefully and restarting hub");
-			}});
-	  	*/
 		
 
   })
