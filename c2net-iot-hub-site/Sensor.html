@@ -350,22 +350,82 @@ img.emoji {
 	$.ajax({
     		'url' : '/allcategories',
     		'type' : 'GET',
+		 async: false,
 		'success' : function(data) {
 			console.log(data);
 			arr = JSON.parse(data);
 			var list5 = '<div class="container"><div id="list5" class="fixed">';
-			for(var i=0 ; i < arr.length/2;i++){
-				list5+='<ol><li id ="'+arr[i].cat+'">'+arr[i].cat+'</li></ol>'
+			for(var i=0 ; i < 4;i++){
+				if (arr[i].acat.split(',').length > 1|| arr[i].acat.split(' ').length > 1){
+					list5+='<ol><li id ="'+arr[i].acat.split(',')[0]+'">'+arr[i].acat+'</li></ol>'
+				}else{
+					list5+='<ol><li id ="'+arr[i].acat+'">'+arr[i].acat+'</li></ol>'
+				}
 			}
 			list5+='</div>';
 			list5+='<div id="list5" class="flex-item">'
-			for(var i=arr.length ; i < arr.length;i++){
-				list5+='<ol><li id ="'+arr[i].cat+'">'+arr[i].cat+'</li></ol>'
-			}
-			list5+='</div></div>';
-			$(#page--hero).append(list5);
-		}});
+			for(var i=4 ; i < 8;i++){
+			   if (arr[i].acat.split(',').length > 1){
+					list5+='<ol><li id ="'+arr[i].acat.split(',')[0]+'">'+arr[i].acat+'</li></ol>'
 
+			   }else if (arr[i].acat.split(' ').length > 1){
+			   	
+				list5+='<ol><li id ="'+arr[i].acat.split(' ')[0]+'">'+arr[i].acat+'</li></ol>'
+			   }
+			   else{
+					list5+='<ol><li id ="'+arr[i].acat+'">'+arr[i].acat+'</li></ol>'
+				}
+			}
+			list5+='</div>';
+			list5+='<div id="list5" class="flex-item">'
+			for(var i=8 ; i < 12;i++){
+				if (arr[i].acat.split(',').length > 1){
+					list5+='<ol><li id ="'+arr[i].acat.split(',')[0]+'">'+arr[i].acat+'</li></ol>'
+				}else if (arr[i].acat.split(' ').length > 1){
+					
+				list5+='<ol><li id ="'+arr[i].acat.split(' ')[0]+'">'+arr[i].acat+'</li></ol>'
+				}
+				else{
+					list5+='<ol><li id ="'+arr[i].acat+'">'+arr[i].acat+'</li></ol>'
+				}			
+			}
+			list5+='</div>';
+			list5+='<div id="list5" class="flex-item">'
+			for(var i=12 ; i < 16;i++){
+				if (arr[i].acat.split(',').length > 1 || arr[i].acat.split(' ').length > 1){
+					list5+='<ol><li id ="'+arr[i].acat.split(',')[0]+'">'+arr[i].acat+'</li></ol>'
+				}else if (arr[i].acat.split(' ').length > 1){
+					
+					list5+='<ol><li id ="'+arr[i].acat.split(' ')[0]+'">'+arr[i].acat+'</li></ol>'
+				}
+				else{
+					list5+='<ol><li id ="'+arr[i].acat+'">'+arr[i].acat+'</li></ol>'
+				}
+			}
+
+			list5+='</div></div>';
+			$('#page--hero').append(list5);
+		}});
+	$.ajax({
+    		'url' : '/allsensors',
+    		'type' : 'GET',
+		 async: false,
+		'success' : function(data) {
+			   console.log(data)
+			arr = JSON.parse(data);
+			for(var i=0 ; i < arr.length ;i++){
+			   var li='<ol><li>'+arr[i].sensor+' : '+arr[i].code+'</li></ol><input type="checkbox" name="vehicle" value="Bike">'
+			if (arr[i].cat.split(',').length > 1){
+				$('#'+arr[i].cat.split(',')[0]).append(li);
+			}else if (arr[i].cat.split(' ').length > 1){
+				
+				$('#'+arr[i].cat.split(' ')[0]).append(li);
+			}
+			else{
+			   $('#'+arr[i].cat).append(li);
+			}
+			}
+		}});
 
 </script>
 
