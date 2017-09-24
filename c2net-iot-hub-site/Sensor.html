@@ -351,11 +351,19 @@ img.emoji {
     		'url' : '/allcategories',
     		'type' : 'GET',
 		'success' : function(data) {
+			console.log(data);
 			arr = JSON.parse(data);
 			var list5 = '<div class="container"><div id="list5" class="fixed">';
-			for(var i=0 ; i < arr.length;i++){
+			for(var i=0 ; i < arr.length/2;i++){
 				list5+='<ol><li id ="'+arr[i].cat+'">'+arr[i].cat+'</li></ol>'
 			}
+			list5+='</div>';
+			list5+='<div id="list5" class="flex-item">'
+			for(var i=arr.length ; i < arr.length;i++){
+				list5+='<ol><li id ="'+arr[i].cat+'">'+arr[i].cat+'</li></ol>'
+			}
+			list5+='</div></div>';
+			$(#page--hero).append(list5);
 		}});
 
 
