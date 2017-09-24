@@ -249,7 +249,7 @@ img.emoji {
 	</div>	  
 <div class="alert alert-danger alert-dismissible fade in text-center hidden" role="alert" id="failure">
   <strong>UHMMM!</strong> Something bad happened <a href="#" class="alert-link">in our server :(</a>.
-	</div>	
+	</div>
 	<section class="full" id="page--hero">
 
 		<!--
@@ -268,8 +268,33 @@ img.emoji {
 	<a id="add_row" class="btn btn-default pull-right">Add</a>
 	<a id="save" class="btn btn-primary pull-right">Save</a>
 
-</div>	
--->
+		-->
+	</section>
+<footer id="global--footer">
+	<div class="wrap cf">
+			<a class="cnet  os-animation" href="http://c2net-project.eu/" data-os-animation="fadeInUp">About C2NET</a>
+			<a class="copyright os-animation" href="http://gris.uninova.pt" data-os-animation="fadeInUp">
+				© GRIS/UNINOVA. 2017
+			</a>
+		</div>
+
+	</footer>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="LWFiles/rangeslider.js"></script>
+<script type="text/javascript" src="LWFiles/project-planner.js"></script>
+<script type="text/javascript" src="LWFiles/waypoints.js"></script>
+<script type="text/javascript" src="LWFiles/slick.js"></script>
+<script type="text/javascript" src="LWFiles/ScrollMagic.js"></script>
+<script type="text/javascript" src="LWFiles/debug.js"></script>
+<script type="text/javascript" src="LWFiles/scripts-min.js"></script>
+<script type="text/javascript" src="LWFiles/wp-embed.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+/**
 <div class="container">
 <div id="list5" class="fixed">
    <ol>
@@ -321,86 +346,18 @@ img.emoji {
       </li>
    </ol>
 </div>
-<div id="list5" class="flex-item">
-   <ol>
-      <li>Google
-         <ol>
-            <li>Picasa</li>
-            <li>Feedburner</li>
-            <li>Youtube</li>
-         </ol>
-      </li>
-      <li>Microsoft
-         <ol>
-            <li>Corel Corporation</li>
-            <li>Zignals</li>
-            <li>ByteTaxi</li>
-         </ol>
-      </li>
-      <li>Yahoo!
-         <ol>
-            <li>Xoopit</li>
-            <li>BuzzTracker</li>
-            <li>MyBlogLog</li>
-         </ol>
-      </li>
-   </ol>
-</div>
-
-</div>
-
-	</section>
-<footer id="global--footer">
-	<div class="wrap cf">
-			<a class="cnet  os-animation" href="http://c2net-project.eu/" data-os-animation="fadeInUp">About C2NET</a>
-			<a class="copyright os-animation" href="http://gris.uninova.pt" data-os-animation="fadeInUp">
-				© GRIS/UNINOVA. 2017
-			</a>
-		</div>
-
-	</footer>
-</main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript" src="LWFiles/rangeslider.js"></script>
-<script type="text/javascript" src="LWFiles/project-planner.js"></script>
-<script type="text/javascript" src="LWFiles/waypoints.js"></script>
-<script type="text/javascript" src="LWFiles/slick.js"></script>
-<script type="text/javascript" src="LWFiles/ScrollMagic.js"></script>
-<script type="text/javascript" src="LWFiles/debug.js"></script>
-<script type="text/javascript" src="LWFiles/scripts-min.js"></script>
-<script type="text/javascript" src="LWFiles/wp-embed.js"></script>
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-/**
-<div id="list5" class="flex-item">
-   <ol>
-      <li>Google
-         <ol>
-            <li>Picasa</li>
-            <li>Feedburner</li>
-            <li>Youtube</li>
-         </ol>
-      </li>
-      <li>Microsoft
-         <ol>
-            <li>Corel Corporation</li>
-            <li>Zignals</li>
-            <li>ByteTaxi</li>
-         </ol>
-      </li>
-      <li>Yahoo!
-         <ol>
-            <li>Xoopit</li>
-            <li>BuzzTracker</li>
-            <li>MyBlogLog</li>
-         </ol>
-      </li>
-   </ol>
-</div>
 */
+	$.ajax({
+    		'url' : '/allcategories',
+    		'type' : 'GET',
+		'success' : function(data) {
+			arr = JSON.parse(data);
+			var list5 = '<div class="container"><div id="list5" class="fixed">';
+			for(var i=0 ; i < arr.length;i++){
+				list5+='<ol><li id ="'+arr[i].cat+'">'+arr[i].cat+'</li></ol>'
+			}
+		}});
+
 
 </script>
 
