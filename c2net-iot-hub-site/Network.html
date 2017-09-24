@@ -338,11 +338,11 @@ img.emoji {
     	}		
 	});
 	var all_sensors = $.getValues("/allsensors");
-	var all_alive =	$.getValues("/allalive");
+	var all_alive =	$.getValues("/allselected");
 	var options="";
 	var flag = false;
 	for(var f=0; f < all_alive.length; f++){
-		options+=('<option value="'+f+'">'+all_alive[f].name+'</option>')
+		options+=('<option value="'+f+'">'+all_alive[f].sensor+'</option>')
 	}
 
 
@@ -412,8 +412,8 @@ $("#save").on("click",function(){
 	$('[id^=typesensor] option:selected').each(function(){
 		typename.push($(this).text());
 		for (var i = 0; i < all_alive.length ; i++){
-			if ($(this).text()==all_alive[i].name){
-				typeid.push(all_alive[i].idsensor);
+			if ($(this).text()==all_alive[i].sensor){
+				typeid.push(all_alive[i].code);
 			}
 		}
 	
