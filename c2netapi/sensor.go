@@ -14,14 +14,13 @@ import (
  * sensor placed on an location
  */
 type Sensor struct {
-	Cat      string `json:"cat"`
-	Code     string `json:"code"`
-	Sensor   string `json:"sensor"`
-	Selected int    `json:"selected"`
-}
+	Nodeid   string `json:"nodeid"`
+	Typeid   string `json:"typeid"`
+	Typename string `json:"type_name"`
+	Id       string `json:"id"`
+	Name     string `json:"name"`
+	Freq     string `json:"freq"`
 
-type Categorie struct {
-	Acat string `json:"acat"`
 }
 
 /**
@@ -37,70 +36,12 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 
 		var sensors []Sensor
 		log.Info("aRRIVED HERE")
-		rows, err := db.Query("SELECT * FROM types_of_sensors order by cat")
+		rows, err := db.Query("SELECT * FROM sensors")
 
 		for rows.Next() {
 
 			var s Sensor
-			err = rows.Scan(&s.Cat, &s.Code, &s.Sensor, &s.Selected)
-			if err != nil {
-				log.Error(err.Error())
-				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
-				return
-			}
-			sensors = append(sensors, s)
-		}
-		log.Info(sensors)
-		json.NewEncoder(w).Encode(sensors)
-	}
-}
-func AllCategories(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
-	defer db.Close()
-
-	if err != nil {
-		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
-	} else {
-
-		var cats []Categorie
-		log.Info("aRRIVED HERE")
-		rows, err := db.Query("SELECT DISTINCT cat FROM types_of_sensors")
-
-		for rows.Next() {
-
-			var cat Categorie
-			err = rows.Scan(&cat.Acat)
-			if err != nil {
-				log.Error(err.Error())
-				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
-				return
-			}
-			cats = append(cats, cat)
-		}
-		log.Info(cats)
-		json.NewEncoder(w).Encode(cats)
-	}
-}
-
-/**
-returns all selected
-*/
-func AllSelected(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
-	defer db.Close()
-
-	if err != nil {
-		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
-	} else {
-
-		var sensors []Sensor
-		log.Info("aRRIVED HERE")
-		rows, err := db.Query("SELECT * FROM types_of_sensors where selected=1")
-
-		for rows.Next() {
-
-			var s Sensor
-			err = rows.Scan(&s.Cat, &s.Code, &s.Sensor, &s.Selected)
+			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.Typename, &s.Id, &s.Name,&s.Freq)
 			if err != nil {
 				log.Error(err.Error())
 				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
@@ -113,7 +54,7 @@ func AllSelected(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func UpdateSelected(w http.ResponseWriter, r *http.Request) {
+func InsertSensor(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
@@ -133,15 +74,15 @@ func UpdateSelected(w http.ResponseWriter, r *http.Request) {
 		for _, v := range sensors {
 
 			log.Info(v)
-			stmt, _ := db.Prepare("UPDATE types_of_sensors SET selected = 1  WHERE code = (?)")
-			_, err = stmt.Exec(v.Code)
+			stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name,freq) values(?,?,?,?,?,?)")
+			_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name,v.Freq)
 			if err != nil {
 				log.Info("entered error")
 				log.Error(err.Error()) // proper error handling instead of panic in your app
-				json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to update selected in database"})
+				json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
 			}
 		}
-		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully updated selected", Body: fmt.Sprintf("%+v\n", sensors)})
+		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully Inserted SensorArea Into the Database", Body: fmt.Sprintf("%+v\n", sensors)})
 
 	}
 }
@@ -154,22 +95,24 @@ func DeleteSensor(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 		return
 	}
-	decoder := json.NewDecoder(r.Body)
-	log.Info(decoder)
-	var sensors []Sensor
-	err = decoder.Decode(&sensors)
-	log.Info(len(sensors))
+
+	vars := mux.Vars(r)
+	idToDelete := vars["id"]
+
+	stmt, _ := db.Prepare("DELETE FROM sensors WHERE name = ?")
 	if err != nil {
-		log.Error(err.Error())
-	}
-	log.Info("passed decode")
-	for _, v := range sensors {
 
-		stmt, _ := db.Prepare("UPDATE types_of_sensors SET selected = 0  WHERE code = (?)")
-
-		_, err = stmt.Exec(v.Code)
+		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor in database"})
+		return
 	}
-	json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully deleted Sensor from the Database"})
+
+	_, err = stmt.Exec(idToDelete)
+
+	if err != nil {
+		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor in database"})
+	} else {
+		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully deleted Sensor from the Database"})
+	}
 
 }
 
