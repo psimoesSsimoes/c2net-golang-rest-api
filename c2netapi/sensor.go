@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gorilla/mux"
 	_ "github.com/mattn/go-sqlite3"
 	log "github.com/sirupsen/logrus"
 )
@@ -15,13 +14,10 @@ import (
  * sensor placed on an location
  */
 type Sensor struct {
-	Nodeid   string `json:"nodeid"`
-	Typeid   string `json:"typeid"`
-	Typename string `json:"type_name"`
-	Id       string `json:"id"`
-	Name     string `json:"name"`
-	Freq     string `json:"freq"`
-
+	Cat      string `json:"cat"`
+	Code     string `json:"code"`
+	Sensor   string `json:"sensor"`
+	Selected int    `json:"selected"`
 }
 
 /**
@@ -37,12 +33,12 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 
 		var sensors []Sensor
 		log.Info("aRRIVED HERE")
-		rows, err := db.Query("SELECT * FROM sensors")
+		rows, err := db.Query("SELECT * FROM types_of_sensors")
 
 		for rows.Next() {
 
 			var s Sensor
-			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.Typename, &s.Id, &s.Name,&s.Freq)
+			err = rows.Scan(&s.Cat, &s.Code, &s.Sensor, &s.Selected)
 			if err != nil {
 				log.Error(err.Error())
 				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
@@ -55,7 +51,38 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func InsertSensor(w http.ResponseWriter, r *http.Request) {
+/**
+returns all selected
+*/
+func AllSelected(w http.ResponseWriter, r *http.Request) {
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
+	defer db.Close()
+
+	if err != nil {
+		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
+	} else {
+
+		var sensors []Sensor
+		log.Info("aRRIVED HERE")
+		rows, err := db.Query("SELECT * FROM types_of_sensors where selected=1")
+
+		for rows.Next() {
+
+			var s Sensor
+			err = rows.Scan(&s.Cat, &s.Code, &s.Sensor, &s.Selected)
+			if err != nil {
+				log.Error(err.Error())
+				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
+				return
+			}
+			sensors = append(sensors, s)
+		}
+		log.Info(sensors)
+		json.NewEncoder(w).Encode(sensors)
+	}
+}
+
+func UpdateSelected(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
@@ -75,15 +102,15 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 		for _, v := range sensors {
 
 			log.Info(v)
-			stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name,freq) values(?,?,?,?,?,?)")
-			_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name,v.Freq)
+			stmt, _ := db.Prepare("UPDATE types_of_sensors SET selected = 1  WHERE code = (?)")
+			_, err = stmt.Exec(v.Code)
 			if err != nil {
 				log.Info("entered error")
 				log.Error(err.Error()) // proper error handling instead of panic in your app
-				json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
+				json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to update selected in database"})
 			}
 		}
-		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully Inserted SensorArea Into the Database", Body: fmt.Sprintf("%+v\n", sensors)})
+		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully updated selected", Body: fmt.Sprintf("%+v\n", sensors)})
 
 	}
 }
@@ -96,24 +123,22 @@ func DeleteSensor(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 		return
 	}
-
-	vars := mux.Vars(r)
-	idToDelete := vars["id"]
-
-	stmt, _ := db.Prepare("DELETE FROM sensors WHERE name = ?")
+	decoder := json.NewDecoder(r.Body)
+	log.Info(decoder)
+	var sensors []Sensor
+	err = decoder.Decode(&sensors)
+	log.Info(len(sensors))
 	if err != nil {
-
-		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor in database"})
-		return
+		log.Error(err.Error())
 	}
+	log.Info("passed decode")
+	for _, v := range sensors {
 
-	_, err = stmt.Exec(idToDelete)
+		stmt, _ := db.Prepare("UPDATE types_of_sensors SET selected = 0  WHERE code = (?)")
 
-	if err != nil {
-		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor in database"})
-	} else {
-		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully deleted Sensor from the Database"})
+		_, err = stmt.Exec(v.Code)
 	}
+	json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully deleted Sensor from the Database"})
 
 }
 

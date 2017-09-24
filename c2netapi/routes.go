@@ -23,7 +23,8 @@ var routes = Routes{
 	Route{"DeleteAllAreas", "DELETE", "/areas", DeleteAllAreas},
 
 	Route{"AllSensors", "GET", "/allsensors", AllSensors},
-	Route{"NewSensor", "POST", "/sensor", InsertSensor},
+	Route{"NewSensor", "POST", "/sensor", UpdateSelected},
+	Route{"AllSelected", "GET", "/allselected", AllSelected},
 	Route{"DeleteSensor", "DELETE", "/sensor/{id}", DeleteSensor},
 	Route{"DeleteAllSensors", "DELETE", "/sensors", DeleteAllSensors},
 	Route{"InsertHubId", "POST", "/hub", InsertHubId},
