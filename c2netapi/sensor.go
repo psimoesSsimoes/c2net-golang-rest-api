@@ -37,7 +37,7 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 
 		var sensors []Sensor
 		log.Info("aRRIVED HERE")
-		rows, err := db.Query("SELECT * FROM types_of_sensors")
+		rows, err := db.Query("SELECT * FROM types_of_sensors order by cat")
 
 		for rows.Next() {
 
@@ -64,7 +64,7 @@ func AllCategories(w http.ResponseWriter, r *http.Request) {
 
 		var cats []Categorie
 		log.Info("aRRIVED HERE")
-		rows, err := db.Query("SELECT cat FROM types_of_sensors")
+		rows, err := db.Query("SELECT DISTINCT cat FROM types_of_sensors")
 
 		for rows.Next() {
 
