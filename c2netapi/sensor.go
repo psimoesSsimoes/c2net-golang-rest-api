@@ -20,7 +20,6 @@ type Sensor struct {
 	Id       string `json:"id"`
 	Name     string `json:"name"`
 	Freq     string `json:"freq"`
-
 }
 
 /**
@@ -41,7 +40,7 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 		for rows.Next() {
 
 			var s Sensor
-			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.Typename, &s.Id, &s.Name,&s.Freq)
+			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.Typename, &s.Id, &s.Name, &s.Freq)
 			if err != nil {
 				log.Error(err.Error())
 				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
@@ -75,7 +74,7 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 
 			log.Info(v)
 			stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name,freq) values(?,?,?,?,?,?)")
-			_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name,v.Freq)
+			_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name, v.Freq)
 			if err != nil {
 				log.Info("entered error")
 				log.Error(err.Error()) // proper error handling instead of panic in your app
@@ -85,61 +84,4 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully Inserted SensorArea Into the Database", Body: fmt.Sprintf("%+v\n", sensors)})
 
 	}
-}
-
-func DeleteSensor(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
-	defer db.Close()
-
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-
-	vars := mux.Vars(r)
-	idToDelete := vars["id"]
-
-	stmt, _ := db.Prepare("DELETE FROM sensors WHERE name = ?")
-	if err != nil {
-
-		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor in database"})
-		return
-	}
-
-	_, err = stmt.Exec(idToDelete)
-
-	if err != nil {
-		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor in database"})
-	} else {
-		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully deleted Sensor from the Database"})
-	}
-
-}
-
-func DeleteAllSensors(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
-	defer db.Close()
-
-	if err != nil {
-		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
-	} else {
-
-		stmt, err := db.Prepare("DELETE FROM sensors")
-		if err != nil {
-			log.Error(err)
-			json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't prepare delete on c2net sqlite db"})
-			return
-		}
-		_, err = stmt.Exec()
-
-		if err != nil {
-			log.Error(err)
-			json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't execute delete on c2net sqlite db"})
-			return
-		}
-
-		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Succefully deleted all Sensors"})
-
-	}
-
 }
