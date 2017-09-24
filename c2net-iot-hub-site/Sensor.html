@@ -385,7 +385,7 @@ img.emoji {
 
 
 $(document).ready(function(){
-  var $obj=$(".modal")
+  /**var $obj=$(".modal")
   		  ,$overlay=$(".modal-overlay")
     ,blur=$("#blur-filter").get(0)
   ;
@@ -414,7 +414,7 @@ $(document).ready(function(){
   	function openModal(){
       /*$overlay.css({
         display:"block"
-      })*/
+      })
       TweenMax.to($overlay,0.1,{autoAlpha:1});
       
       TweenMax.fromTo($obj,0.6,{y:-($(window).height()+$obj.height())},{delay:0.2,y:"0%",ease:Elastic.easeOut,easeParams:[1.1,0.7],force3D:true});
@@ -422,36 +422,41 @@ $(document).ready(function(){
   function closeModal(){
     TweenMax.to($overlay,0.1,{delay:0.55,autoAlpha:0});
     TweenMax.to($obj,0.55,{y:$(window).height()+$obj.height(),ease:Back.easeIn,force3D:true});
-  }
+  }*/
   $("#plus").click(function(){
 	    //openModal();
 	  	console.log("clicked");
 	  	var x = []
-	  	if ($('#serial').is(':checked')){
-			y={}
-			y.name = "DataListenerSerialPort";
-			x.push(y);
-  		}
-		if ($('#zig').is(':checked')){
-	  		y={}
-			y.name = "DataListenerZigBee";
-			x.push(y);
-  		}
-		if ($('#sock').is(':checked')){
-			y={}
-			y.name = "DataListenerSocketUdp";
-			x.push(y);
+	  	
+		if ($("#page--hero input:checkbox:checked").length > 0)
+		{
+			var ids=[];
+			var clicked = $("#page--hero input:checkbox:checked")
+			for (var i = 0 ; i < clicked.length; i++){
+				var obj={};
+				console.log(clicked[i].id);
+				obj.code = clicked[i].id;
+				ids.push(obj);
+			
+			}
+			console.log(ids);
+		 	$.ajax({
+    				'url' : '/sensor',
+    				'type' : 'POST',
+				'data': JSON.stringify(ids),
+    				'success' : function(data) {
+	    				console.log(data);
+					alert("updating succefully and restarting hub");
+				}});
 
-  		}
-		if ($('#can').is(':checked')){
-			y={}
-			y.name = "DataListenerCanBus";
-			x.push(y);
-
-  		}
+		}
+		else
+		{
+			
+		}
 
 		console.log(x);
-		 $.ajax({
+		/** $.ajax({
     			'url' : '/comm',
     			'type' : 'POST',
 			'data': JSON.stringify(x),
@@ -459,8 +464,8 @@ $(document).ready(function(){
 	    			console.log(data);
 				alert("updating succefully and restarting hub");
 			}});
-	  
-
+	  	*/
+		
 
   })
   $(".close-modal,.modal-overlay,.input-submit").click(function(){
