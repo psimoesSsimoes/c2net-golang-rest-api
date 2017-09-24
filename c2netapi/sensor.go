@@ -20,6 +20,10 @@ type Sensor struct {
 	Selected int    `json:"selected"`
 }
 
+type Categorie struct {
+	Acat string `json:"acat"`
+}
+
 /**
 returns all sensor areas
 */
@@ -48,6 +52,33 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 		}
 		log.Info(sensors)
 		json.NewEncoder(w).Encode(sensors)
+	}
+}
+func AllCategories(w http.ResponseWriter, r *http.Request) {
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
+	defer db.Close()
+
+	if err != nil {
+		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
+	} else {
+
+		var cats []Categorie
+		log.Info("aRRIVED HERE")
+		rows, err := db.Query("SELECT cat FROM types_of_sensors")
+
+		for rows.Next() {
+
+			var cat Categorie
+			err = rows.Scan(&cat.Acat)
+			if err != nil {
+				log.Error(err.Error())
+				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
+				return
+			}
+			cats = append(cats, cat)
+		}
+		log.Info(cats)
+		json.NewEncoder(w).Encode(cats)
 	}
 }
 
