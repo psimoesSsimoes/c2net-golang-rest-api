@@ -370,7 +370,13 @@ img.emoji {
 			   console.log(data)
 			arr = JSON.parse(data);
 			for(var i=0 ; i < arr.length ;i++){
-			   var li='<ol><li>'+arr[i].sensor+' : '+arr[i].code+'</li></ol><input type="checkbox" id="'+arr[i].code+'" value="Bike">'
+				if(arr[i].selected!=1){
+					var li='<ol><li>'+arr[i].sensor+' : '+arr[i].code+'</li></ol><input type="checkbox" id="'+arr[i].code+'" value="Bike">'
+
+				}else{
+
+					var li='<ol><li>'+arr[i].sensor+' : '+arr[i].code+'</li></ol><input type="checkbox" id="'+arr[i].code+'" value="Bike" checked="checked">'
+				}
 			if (arr[i].cat.split(',').length > 1){
 				$('#'+arr[i].cat.split(',')[0]).append(li);
 			}else if (arr[i].cat.split(' ').length > 1){
