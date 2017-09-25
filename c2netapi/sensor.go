@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-
 	_ "github.com/mattn/go-sqlite3"
 	log "github.com/sirupsen/logrus"
 )
@@ -25,7 +24,10 @@ type Sensor struct {
 /**
 returns all sensor areas
 */
-func (db *sql.DB) AllSensors(w http.ResponseWriter, r *http.Request) {
+func AllSensors(w http.ResponseWriter, r *http.Request) {
+			db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
+	defer db.Close()
+
 		var sensors []Sensor
 		log.Info("aRRIVED HERE")
 		rows, err := db.Query("SELECT * FROM sensors")
