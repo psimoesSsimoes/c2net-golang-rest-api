@@ -25,14 +25,7 @@ type Sensor struct {
 /**
 returns all sensor areas
 */
-func AllSensors(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
-	defer db.Close()
-
-	if err != nil {
-		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
-	} else {
-
+func (db *sql.DB) AllSensors(w http.ResponseWriter, r *http.Request) {
 		var sensors []Sensor
 		log.Info("aRRIVED HERE")
 		rows, err := db.Query("SELECT * FROM sensors")
@@ -50,13 +43,11 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 		}
 		log.Info(sensors)
 		json.NewEncoder(w).Encode(sensors)
-	}
 }
 
 func InsertSensor(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
-
 	if err != nil {
 		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
 	} else {
@@ -70,6 +61,8 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 			log.Error(err.Error())
 		}
 		log.Info("passed decode")
+		
+		defer db.Close()
 		for _, v := range sensors {
 
 			log.Info(v)
