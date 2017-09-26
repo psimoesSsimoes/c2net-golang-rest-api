@@ -72,20 +72,15 @@ html {
 body {
   margin: 0;
   /*background-image: url('./pf.png');*/
- background-color: #fff; 
-background-image: 
-linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
-linear-gradient(#eee .1em, transparent .1em);
-background-size: 100% 1.2em;
-
-  /*background-image: url('./as.png');*/
+  background-image: url('./cropped1.jpg');
   /*background: -moz-linear-gradient(#c9d6ff,#e2e2e2); /* For Firefox 3.6 to 15 */
   /*background: linear-gradient(#F8F8F8,#E8E8E8); /* Standard syntax */
-  /*background-repeat:no-repeat;*/
-/*-webkit-background-size: 100% auto;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+-webkit-background-size: 100% auto;
 -moz-background-size: 100% auto;
--o-background-size: 100% auto;*/
-/*background-size: 100% auto ;*/
+-o-background-size: 100% auto;
+background-size: 100% auto ;
   }
 
 /* ==========================================================================
