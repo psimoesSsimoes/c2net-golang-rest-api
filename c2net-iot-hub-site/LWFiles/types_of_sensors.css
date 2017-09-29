@@ -1,21 +1,12 @@
 /* LIST #5 */
-.container{
-    display: flex;
-}
-.fixed{
-    width: 200px;
-}
-.flex-item{
-    flex-grow: 1;
-}
 
-input[type=checkbox] {
-  position: relative;
-  bottom: 32px;
-}
+.checkbox-grid li {
+    display: block;
+    float: left;
+    width: 25%;
+    color:#000000;
+   
+    padding-bottom: 2em;
 
-#list5 { color:#606060;}
-#list5 ol { font-size:18px; }
-#list5 ol li { padding:15px 0 15px 5px; }
-#list5 ol li ol { list-style-image: url("../images/nested.png"); padding:15px 0 15px 5px; font-size:15px; }
-#list5 ol li ol li { color:#1E90FF; height:15px; margin-left:10px; }
+}
+#list5 { color:#606060;font-size:28px;text-align: center;padding-top: 15cm; padding:15px 0 15px 15px; }
