@@ -343,10 +343,11 @@ $(document).ready(function(){
 	  	console.log("clicked");
 	  	var x = []
 	  	
-		if ($("#page--hero input:checkbox:checked").length > 0)
+		if ($("#list input:checkbox:checked").length > 0)
 		{
 			var ids=[];
 			var clicked = $("#page--hero input:checkbox:checked")
+			console.log();
 			for (var i = 0 ; i < clicked.length; i++){
 				var obj={};
 				console.log(clicked[i].id);
