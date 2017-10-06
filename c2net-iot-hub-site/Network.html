@@ -355,7 +355,7 @@ img.emoji {
 				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+i+"\" type=\"text\" name='sensorid"+i+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='Sensor Name.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"freq\"><input id=\"freq"+i+"\" type=\"text\" name='freq"+i+"'  placeholder='Frequency of collection of Data.' class=\"form-control\"/></td>\n";
-				str+='<td data-name="del"><button name"del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
+				str+='<td data-name="del"><button name="del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 				
 				$("#name"+i).val(all_sensors[i].nodeid);  
@@ -392,7 +392,7 @@ $(document).ready(function() {
 				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+newid+"\" type=\"text\" name='sensorname"+newid+"'  placeholder='This Sensor Name.' class=\"form-control\"/></td>\n";
 				str+="<td data-name=\"freq\"><input id=\"freq"+newid+"\" type=\"text\" name='freq"+newid+"'  placeholder='Frequency of collection of Data.' class=\"form-control\"/></td>\n";
 				
-			str+='<td data-name="del"><button name"del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
+			str+='<td data-name="del"><button name="del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
 				$('#body').append(str);
 				
 				$("#typesensor"+newid).append(options);
@@ -472,6 +472,9 @@ $("#save").on("click",function(){
 
     
 $("td button.row-remove").on("click", function(){
+							var id = $(this).attr('name').replace("del","");
+							console.log($('[id=name'+id+']').val());
+							console.log($('[id=sensorid'+id+']').val());
 	$(this).closest("tr").remove();
 });
 
