@@ -473,8 +473,26 @@ $("#save").on("click",function(){
     
 $("td button.row-remove").on("click", function(){
 							var id = $(this).attr('name').replace("del","");
+							var obj={};
+							obj.nodeid=$('[id=name'+id+']').val();
+							obj.id=$('[id=sensorid'+id+']').val();
 							console.log($('[id=name'+id+']').val());
 							console.log($('[id=sensorid'+id+']').val());
+							console.log(obj);
+	$.ajax({
+    		'url' : '/sensor',
+    		'type' : 'DELETE',
+		 contentType: 'application/json',
+		 data: JSON.stringify(obj), 
+		'success' : function(data) {
+
+		},
+		'failure': function(data){
+
+		},
+	});
+
+
 	$(this).closest("tr").remove();
 });
 
