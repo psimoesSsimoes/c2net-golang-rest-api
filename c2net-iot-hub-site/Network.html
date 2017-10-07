@@ -66,6 +66,8 @@ img.emoji {
 <link rel="stylesheet" id="font-awesome-css" href="LWFiles/font-awesome.css" type="text/css" media="all">
 <link rel="stylesheet" id="lightbox-stylesheet-css" href="LWFiles/lightcase.css" type="text/css" media="all">
 <link rel="stylesheet" href="LWFiles/sensing.css" type="text/css" media="all">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="LWFiles/materialmenu.css">
 <script type="text/javascript" src="LWFiles/jquery.js"></script>
 <script type="text/javascript" src="LWFiles/jquery-migrate.js"></script>
 <script type="text/javascript" src="LWFiles/modernizr.js"></script>
@@ -262,7 +264,12 @@ img.emoji {
 	</div>	  
 <div class="alert alert-danger alert-dismissible fade in text-center hidden" role="alert" id="failure">
   <strong>UHMMM!</strong> Something bad happened <a href="#" class="alert-link">here:(</a>.
-	</div>	
+	</div>		<div class="menu-button"><i class="zmdi zmdi-apps"></i>
+<a id="plus" target="blank"><i class="zmdi zmdi-save"></i></a>
+<a id="minus" target="blank"><i class="zmdi zmdi-help"></i></a>
+			</div>
+
+
 	<section class="full" id="page--hero">
 
 
@@ -282,8 +289,8 @@ img.emoji {
 
 </div>	
 
-
 	</section>
+				
 <footer id="global--footer" style="position: absolute;right: 0;  bottom: 0;  left: 0;" >
 	<div class="wrap cf">
 			<a class="cnet " href="http://c2net-project.eu/" data-os-animation="fadeInUp">About C2NET</a>
@@ -292,7 +299,7 @@ img.emoji {
 			</a>
 		</div>
 
-	</footer>
+		</footer>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="LWFiles/rangeslider.js"></script>
@@ -304,8 +311,10 @@ img.emoji {
 <script type="text/javascript" src="LWFiles/scripts-min.js"></script>
 <script type="text/javascript" src="LWFiles/wp-embed.js"></script>
 
-
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.1/TweenMax.min.js"></script>
+
+
 
 <script type="text/javascript">
 
@@ -403,7 +412,7 @@ $(document).ready(function() {
 	});
 
 
-$("#save").on("click",function(){
+$("#plus").on("click",function(){
 	
 //	$( "#myselect option:selected" ).text();
 	var typeid=[];
@@ -496,6 +505,10 @@ $("td button.row-remove").on("click", function(){
 	$(this).closest("tr").remove();
 });
 
+ $("#minus").click(function(){
+
+  	window.location.replace("HelpNetwork.html");
+  });
 
 
 });
