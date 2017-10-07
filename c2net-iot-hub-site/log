@@ -1,0 +1,1569 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building IoT_hub 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ IoT_hub ---
+[INFO] Deleting /home/pi/C2NET/c2net-iot-hub/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ IoT_hub ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/pi/C2NET/c2net-iot-hub/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:compile (default-compile) @ IoT_hub ---
+[INFO] Compiling 34 source files to /home/pi/C2NET/c2net-iot-hub/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.3:testResources (default-testResources) @ IoT_hub ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/pi/C2NET/c2net-iot-hub/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.5.1:testCompile (default-testCompile) @ IoT_hub ---
+[INFO] Compiling 1 source file to /home/pi/C2NET/c2net-iot-hub/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ IoT_hub ---
+[INFO] Surefire report directory: /home/pi/C2NET/c2net-iot-hub/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running IoT_hub.IoT_hub.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.2:jar (default-jar) @ IoT_hub ---
+[INFO] Building jar: /home/pi/C2NET/c2net-iot-hub/target/IoT_hub-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:2.2-beta-4:single (default) @ IoT_hub ---
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] org/slf4j/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/maven/org.slf4j/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] org/apache/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] org/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] META-INF/LICENSE.txt already added, skipping
+[INFO] META-INF/NOTICE.txt already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] io/ already added, skipping
+[INFO] io/socket/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/maven/io.socket/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] okhttp3/ already added, skipping
+[INFO] okhttp3/internal/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/maven/com.squareup.okhttp3/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] org/apache/ already added, skipping
+[INFO] org/apache/commons/ already added, skipping
+[INFO] META-INF/LICENSE.txt already added, skipping
+[INFO] META-INF/NOTICE.txt already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/maven/org.apache.commons/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] org/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] Communication/PlatformSubscriberLocal$4.class already added, skipping
+[INFO] Communication/EventPublisher$1.class already added, skipping
+[INFO] Communication/CanSend.class already added, skipping
+[INFO] Communication/PlatformSubscriber.class already added, skipping
+[INFO] Communication/PlatformSubscriberLocal$2.class already added, skipping
+[INFO] Communication/PlatformSubscriber$1.class already added, skipping
+[INFO] Communication/PlatformSubscriber$4.class already added, skipping
+[INFO] Communication/PlatformSubscriber$3.class already added, skipping
+[INFO] Communication/PlatformPublisherLocal.class already added, skipping
+[INFO] Communication/PlatformSubscriber$5.class already added, skipping
+[INFO] Communication/PlatformSubscriberLocal.class already added, skipping
+[INFO] Communication/PlatformSubscriber$7.class already added, skipping
+[INFO] Communication/PlatformPublisher$1.class already added, skipping
+[INFO] Communication/PlatformSubscriber$2.class already added, skipping
+[INFO] Communication/PlatformPublisher$2.class already added, skipping
+[INFO] Communication/PlatformSubscriber$6.class already added, skipping
+[INFO] Communication/PlatformSubscriberLocal$1.class already added, skipping
+[INFO] Communication/PlatformPublisher.class already added, skipping
+[INFO] Communication/PlatformSubscriberLocal$3.class already added, skipping
+[INFO] Communication/EventPublisher.class already added, skipping
+[INFO] IoT_hub/IoT_hub/Main.class already added, skipping
+[INFO] Controller/ChangeListener.class already added, skipping
+[INFO] Controller/DeviceManagement$1.class already added, skipping
+[INFO] Controller/DeviceManagement.class already added, skipping
+[INFO] Controller/FileChangedWatcher.class already added, skipping
+[INFO] Models/StreamElement.class already added, skipping
+[INFO] Models/Measure.class already added, skipping
+[INFO] Models/DataRangeTypeLoHi.class already added, skipping
+[INFO] Models/Device.class already added, skipping
+[INFO] Models/DataFilterRule.class already added, skipping
+[INFO] Models/DataField.class already added, skipping
+[INFO] Models/DataTypes.class already added, skipping
+[INFO] Models/RmConfigTranslator.class already added, skipping
+[INFO] Models/Monitoring.class already added, skipping
+[INFO] persistance/JDBC.class already added, skipping
+[INFO] Utils/HtmlBuilder.class already added, skipping
+[INFO] Utils/Constants.class already added, skipping
+[INFO] Utils/CanBusMessageInterpreter.class already added, skipping
+[INFO] Utils/xmlReader.class already added, skipping
+[INFO] Utils/BaseJsonConfig.class already added, skipping
+[INFO] Utils/FilerReader.class already added, skipping
+[INFO] Utils/FilerWriter.class already added, skipping
+[INFO] DataListeners/DataListenerSocketUDP$1.class already added, skipping
+[INFO] DataListeners/AbstractDataListener.class already added, skipping
+[INFO] DataListeners/DataListenerCanBus$1.class already added, skipping
+[INFO] DataListeners/DataListenerWifi$1.class already added, skipping
+[INFO] DataListeners/DataListenerFactory.class already added, skipping
+[INFO] DataListeners/DataListenerSerialPort$1.class already added, skipping
+[INFO] DataListeners/DataListenerSerialPort.class already added, skipping
+[INFO] DataListeners/DataListenerSocketUDP.class already added, skipping
+[INFO] DataListeners/DataListenerWifi.class already added, skipping
+[INFO] DataListeners/DataListenerPistolReader$1.class already added, skipping
+[INFO] DataListeners/DataListenerCanBus.class already added, skipping
+[INFO] DataListeners/DataListenerPistolReader.class already added, skipping
+[INFO] Building jar: /home/pi/C2NET/c2net-iot-hub/target/IoT_hub-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] org/slf4j/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/maven/org.slf4j/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] org/apache/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] org/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] META-INF/LICENSE.txt already added, skipping
+[INFO] META-INF/NOTICE.txt already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] io/ already added, skipping
+[INFO] io/socket/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/maven/io.socket/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] okhttp3/ already added, skipping
+[INFO] okhttp3/internal/ already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/maven/com.squareup.okhttp3/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] org/ already added, skipping
+[INFO] org/apache/ already added, skipping
+[INFO] org/apache/commons/ already added, skipping
+[INFO] META-INF/LICENSE.txt already added, skipping
+[INFO] META-INF/NOTICE.txt already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] META-INF/maven/org.apache.commons/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] org/ already added, skipping
+[INFO] META-INF/ already added, skipping
+[INFO] META-INF/MANIFEST.MF already added, skipping
+[INFO] META-INF/maven/ already added, skipping
+[INFO] Communication/PlatformSubscriberLocal$4.class already added, skipping
+[INFO] Communication/EventPublisher$1.class already added, skipping
+[INFO] Communication/CanSend.class already added, skipping
+[INFO] Communication/PlatformSubscriber.class already added, skipping
+[INFO] Communication/PlatformSubscriberLocal$2.class already added, skipping
+[INFO] Communication/PlatformSubscriber$1.class already added, skipping
+[INFO] Communication/PlatformSubscriber$4.class already added, skipping
+[INFO] Communication/PlatformSubscriber$3.class already added, skipping
+[INFO] Communication/PlatformPublisherLocal.class already added, skipping
+[INFO] Communication/PlatformSubscriber$5.class already added, skipping
+[INFO] Communication/PlatformSubscriberLocal.class already added, skipping
+[INFO] Communication/PlatformSubscriber$7.class already added, skipping
+[INFO] Communication/PlatformPublisher$1.class already added, skipping
+[INFO] Communication/PlatformSubscriber$2.class already added, skipping
+[INFO] Communication/PlatformPublisher$2.class already added, skipping
+[INFO] Communication/PlatformSubscriber$6.class already added, skipping
+[INFO] Communication/PlatformSubscriberLocal$1.class already added, skipping
+[INFO] Communication/PlatformPublisher.class already added, skipping
+[INFO] Communication/PlatformSubscriberLocal$3.class already added, skipping
+[INFO] Communication/EventPublisher.class already added, skipping
+[INFO] IoT_hub/IoT_hub/Main.class already added, skipping
+[INFO] Controller/ChangeListener.class already added, skipping
+[INFO] Controller/DeviceManagement$1.class already added, skipping
+[INFO] Controller/DeviceManagement.class already added, skipping
+[INFO] Controller/FileChangedWatcher.class already added, skipping
+[INFO] Models/StreamElement.class already added, skipping
+[INFO] Models/Measure.class already added, skipping
+[INFO] Models/DataRangeTypeLoHi.class already added, skipping
+[INFO] Models/Device.class already added, skipping
+[INFO] Models/DataFilterRule.class already added, skipping
+[INFO] Models/DataField.class already added, skipping
+[INFO] Models/DataTypes.class already added, skipping
+[INFO] Models/RmConfigTranslator.class already added, skipping
+[INFO] Models/Monitoring.class already added, skipping
+[INFO] persistance/JDBC.class already added, skipping
+[INFO] Utils/HtmlBuilder.class already added, skipping
+[INFO] Utils/Constants.class already added, skipping
+[INFO] Utils/CanBusMessageInterpreter.class already added, skipping
+[INFO] Utils/xmlReader.class already added, skipping
+[INFO] Utils/BaseJsonConfig.class already added, skipping
+[INFO] Utils/FilerReader.class already added, skipping
+[INFO] Utils/FilerWriter.class already added, skipping
+[INFO] DataListeners/DataListenerSocketUDP$1.class already added, skipping
+[INFO] DataListeners/AbstractDataListener.class already added, skipping
+[INFO] DataListeners/DataListenerCanBus$1.class already added, skipping
+[INFO] DataListeners/DataListenerWifi$1.class already added, skipping
+[INFO] DataListeners/DataListenerFactory.class already added, skipping
+[INFO] DataListeners/DataListenerSerialPort$1.class already added, skipping
+[INFO] DataListeners/DataListenerSerialPort.class already added, skipping
+[INFO] DataListeners/DataListenerSocketUDP.class already added, skipping
+[INFO] DataListeners/DataListenerWifi.class already added, skipping
+[INFO] DataListeners/DataListenerPistolReader$1.class already added, skipping
+[INFO] DataListeners/DataListenerCanBus.class already added, skipping
+[INFO] DataListeners/DataListenerPistolReader.class already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 32.718s
+[INFO] Finished at: Sat Oct 07 18:29:20 UTC 2017
+[INFO] Final Memory: 11M/31M
+[INFO] ------------------------------------------------------------------------
+Starting >>LigthtWeight IoT hub!
+DataListenerCanBus
+DataListenerPistolReader
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+2017-10-07
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+2017-10-07
+catch no pistolReader
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 
+io.socket.engineio.client.EngineIOException: xhr poll error
+ERROR ENCOUNTERED. -->> 

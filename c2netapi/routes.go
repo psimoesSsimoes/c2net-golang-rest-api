@@ -21,6 +21,7 @@ var routes = Routes{
 	Route{"EditArea", "PUT", "/area", EditArea},
 	Route{"DeleteArea", "DELETE", "/area/{id}", DeleteArea},
 	Route{"DeleteAllAreas", "DELETE", "/areas", DeleteAllAreas},
+	Route{"Logger", "GET", "/log", Logger},
 
 	Route{"AllSensors", "GET", "/allsensors", AllSensors},
 	Route{"NewSensor", "POST", "/sensor", InsertSensor},

@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/hpcloud/tail"
 	"github.com/gorilla/mux"
 	_ "github.com/mattn/go-sqlite3"
 	log "github.com/sirupsen/logrus"
@@ -17,6 +18,16 @@ import (
 type Alive struct {
 	Idsensor string `json:"idsensor"`
 	Name     string `json:"name"`
+}
+
+func Logger(w http.ResponseWriter, r *http.Request) {
+	t, err := tail.TailFile("/home/pi/Github/c2net-golang-rest-api/c2net-iot-hub-site/log", tail.Config{Follow: true})
+	if err!=nil{
+    	fmt.Fprintf(w, "error")
+	}
+	for line := range t.Lines {
+    	fmt.Fprintf(w, "%s\n",line.Text)
+	}
 }
 
 /**
