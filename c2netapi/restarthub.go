@@ -20,7 +20,7 @@ func RestartHub(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Info(err)
 	}
-	_, err = exec.Command("/bin/bash", "-c", "cd /home/pi/C2NET/c2net-iot-hub && sudo ./setEnv.sh").Output()
+	_, err = exec.Command("/bin/bash", "-c", "cd /home/pi/C2NET/c2net-iot-hub && sudo ./setEnv.sh > /home/pi/Github/c2net-golang-rest-api/c2net-iot-hub-site/log").Output()
 	if err != nil {
 		log.Info(err)
 	}
@@ -65,7 +65,7 @@ func StartHub(w http.ResponseWriter, r *http.Request) {
 			log.Info(err.Error()) // proper error handling instead of panic in your app
 			json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert hub state in database"})
 		} else {
-			_, err = exec.Command("/bin/bash", "-c", "cd /home/pi/C2NET/c2net-iot-hub && sudo ./setEnv.sh").Output()
+			_, err = exec.Command("/bin/bash", "-c", "cd /home/pi/C2NET/c2net-iot-hub && sudo ./setEnv.sh > /home/pi/Github/c2net-golang-rest-api/c2net-iot-hub-site/log").Output()
 			if err != nil {
 				log.Info(err)
 			}
