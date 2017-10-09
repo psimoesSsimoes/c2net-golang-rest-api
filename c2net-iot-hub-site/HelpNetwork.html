@@ -264,7 +264,7 @@ background-size: 100% auto ;
 
                 demo.initialDialogsClassName = 'vex-theme-os vex-theme-stack-demo'
 
-                for (var i = 4; i > -1; i--) {
+                for (var i = 6; i > -1; i--) {
                     vex.dialog.alert({
                         appendLocation: '.stack',
                         unsafeMessage: $('.stack-templates > div:nth-child(' + (i + 1) + ')').html(),
@@ -349,7 +349,56 @@ background-size: 100% auto ;
         </script>
         <div class="stack-templates" style="display: none">
             <div>
-                <h1>LW-IoT Hub supports a different array of Se</h1>
+                <h1>On Define Network you'll provide information about the Network deployed in your company:</h1>
+                <div class="reveal">
+                    
+			<h3>Click <strong>add</strong> for each sensor added</h3>
+
+                </div>
+            </div>
+	    
+            <div>
+                <h3>Input fields will appear</h3>
+                <div class="reveal">
+			<ul>
+				<li><strong> Node ID :</strong> an ID that identifies a location in your factory</li>
+				<li><strong> Sensor Type :</strong> type of Sensor deployed on that location</li>
+				<li> <strong>Sensor ID :</strong> a unique ID that represents this Sensor on this location</li>
+				<li> <strong>Sensor Name : </strong> Name given to that Sensor when it is forwarding collected values to the C2NeT platform</li>
+				<li> <strong>Frequency :</strong> rate you want the sensor to collect data</li>
+			</ul>
+                   </div>
+            </div>
+            <div>
+                <h3>Fill them accordingly:</h3>
+                <div class="reveal">
+			<ul>
+				<li><strong> Node ID :</strong> hexadecimal number</li>
+				<li><strong> Sensor Type :</strong> type of Sensor defined in Define Sensor</li>
+				<li> <strong>Sensor ID :</strong> hexadecimal number</li>
+				<li> <strong>Sensor Name :</strong> letters, special characters, numbers</li>
+				<li> <strong>Frequency :</strong> seconds</li>
+			</ul>
+
+                </div>
+            </div>
+            <div>
+                <h1>After go to Menu on the bottom right corner</h1>
+                <div class="reveal">
+                    <h3>Find the save symbol and click it</h3>
+                </div>
+            </div>
+	    <div>
+                <h1>Now the network is configured at hub level!</h1>
+                <div class="reveal">
+                    <h3>Messages can now be interchanged between Hub and Sensors.</h3>
+                </div>
+            </div>
+
+	    <div>
+		    <h3>An example of such message are the following 8 bytes:</h3>
+		    <img src="LWFiles/netoworkhelper.png" height="300" width="528" style="position: absolute;top: 65px;left: 20px;">
+		    <!--<h1>LW-IoT Hub supports a different array of Se</h1>
                 <div class="reveal">
                     <p>From diverse categories such as:</p>
                     <ul>
@@ -359,34 +408,13 @@ background-size: 100% auto ;
                         <li>Pressure</li>
                     </ul>
 		    <p>And many more.<br></p>
-                </div>
+		    </div>-->
             </div>
-            <div>
-                <h1>Look on this list for the types of sensors deployed in your network.</h1>
+	    <div>
+                <h2>For more info about LW-IoT-Hub internals, configuration, programming actuators, messages interchanged and many other topics please refer to the documentation at:</h2>
                 <div class="reveal">
-                    
-		    <p>Each sensor has a range of expected values and type of data.</p>
-		    <h2>Select the ones deployed.</h2>
-
-                </div>
-            </div>
-            <div>
-                <h1>On each sensor you have an hex decimal code</h1>
-                <div class="reveal">
-			<p>This code uniquely identifies the type of sensor. From it the hub will know from <strong>which type of sensor </strong>is receiving data and how to interpret it.</p>
-                   </div>
-            </div>
-            <div>
-                <h1>Once selected the type of sensor will be available on Define Network </h1>
-                <div class="reveal">
-                    <h2>Under Sensor Type</h2>
-                </div>
-            </div>
-            <div>
-                <h1>So after selecting the types of sensors go to Menu on the bottom right corner</h1>
-                <div class="reveal">
-                    <h2>Find the save symbol and click it</h2>
-                </div>
+                	<p style="text-align: center;"><a href="https://opensourceprojects.eu/p/c2net/dcf/iot-hub/iot-hub-2/code/ci/c170425aeb895bb6f373b1385d6fa9db36e8386b/tree/">LW-IoT-Hub documentation</a></p>
+		</div>
             </div>
         </div>
         <style>
