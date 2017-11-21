@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en-GB" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-GB" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-GB" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html prefix="og: http://ogp.me/ns#" class=" js flexbox webgl no-touch geolocation hashchange history websockets rgba hsla multiplebgs backgroundsize borderimage textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage applicationcache svg svgclippaths mediaqueries no-regions supports" style="" lang="en-GB"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+
+				<meta http-equiv="X-UA-Compatible" content="IE=edge"><script src="LWFiles/nr-1026.js"></script><script async="" src="LWFiles/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+
+		<title>LW-IoT Hub</title>
+
+				<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+				<link rel="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-touch-icon" sizes="57x57" href="https://chaptr.studio/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/favicon-16x16.png">
+		<link rel="manifest" href="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/manifest.json">
+		<meta name="msapplication-TileColor" content="#000">
+		<meta name="msapplication-TileImage" content="https://chaptr.studio/wp-content/themes/chaptr/library/images/favicons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#000">
+
+
+				
+<!-- This site is optimized with the Yoast SEO plugin v4.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="">
+<link rel="canonical" href="#">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LW-IoT Hub">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript">
+		</script><script src="LWFiles/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="player-stylesheet-css" href="LWFiles/plyr.css" type="text/css" media="all">
+<link rel="stylesheet" id="animate-css" href="LWFiles/animate.css" type="text/css" media="all">
+<link rel="stylesheet" id="stylesheet-css" href="LWFiles/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="LWFiles/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="lightbox-stylesheet-css" href="LWFiles/lightcase.css" type="text/css" media="all">
+<link rel="stylesheet" href="LWFiles/sensing.css" type="text/css" media="all">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="LWFiles/materialmenu.css">
+<script type="text/javascript" src="LWFiles/jquery.js"></script>
+<script type="text/javascript" src="LWFiles/jquery-migrate.js"></script>
+<script type="text/javascript" src="LWFiles/modernizr.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Optional theme -->
+
+<!-- Latest compiled and minified JavaScript 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+</head>
+
+	<body class="page-template page-template-studio page-template-studio-php page page-id-31" itemscope="" itemtype="http://schema.org/WebPage"><div id="sprite-plyr" hidden=""><!--?xml version="1.0" encoding="UTF-8"?--><><svg xmlns="http://www.w3.org/2000/svg"><symbol id="plyr-captions-off" viewBox="0 0 18 18"><path d="M1 1c-.6 0-1 .4-1 1v11c0 .6.4 1 1 1h4.6l2.7 2.7c.2.2.4.3.7.3.3 0 .5-.1.7-.3l2.7-2.7H17c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1H1zm4.52 10.15c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41C8.47 4.96 7.46 3.76 5.5 3.76c-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69zm7.57 0c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41c-.28-1.15-1.29-2.35-3.25-2.35-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69z" fill-rule="evenodd" fill-opacity=".5"></path></symbol><symbol id="plyr-captions-on" viewBox="0 0 18 18"><path d="M1 1c-.6 0-1 .4-1 1v11c0 .6.4 1 1 1h4.6l2.7 2.7c.2.2.4.3.7.3.3 0 .5-.1.7-.3l2.7-2.7H17c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1H1zm4.52 10.15c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41C8.47 4.96 7.46 3.76 5.5 3.76c-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69zm7.57 0c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41c-.28-1.15-1.29-2.35-3.25-2.35-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69z" fill-rule="evenodd"></path></symbol><symbol id="plyr-enter-fullscreen" viewBox="0 0 18 18"><path d="M10 3h3.6l-4 4L11 8.4l4-4V8h2V1h-7zM7 9.6l-4 4V10H1v7h7v-2H4.4l4-4z"></path></symbol><symbol id="plyr-exit-fullscreen" viewBox="0 0 18 18"><path d="M1 12h3.6l-4 4L2 17.4l4-4V17h2v-7H1zM16 .6l-4 4V1h-2v7h7V6h-3.6l4-4z"></path></symbol><symbol id="plyr-fast-forward" viewBox="0 0 18 18"><path d="M7.875 7.171L0 1v16l7.875-6.171V17L18 9 7.875 1z"></path></symbol><symbol id="plyr-muted" viewBox="0 0 18 18"><path d="M12.4 12.5l2.1-2.1 2.1 2.1 1.4-1.4L15.9 9 18 6.9l-1.4-1.4-2.1 2.1-2.1-2.1L11 6.9 13.1 9 11 11.1zM3.786 6.008H.714C.286 6.008 0 6.31 0 6.76v4.512c0 .452.286.752.714.752h3.072l4.071 3.858c.5.3 1.143 0 1.143-.602V2.752c0-.601-.643-.977-1.143-.601L3.786 6.008z"></path></symbol><symbol id="plyr-pause" viewBox="0 0 18 18"><path d="M6 1H3c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1zM12 1c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1h-3z"></path></symbol><symbol id="plyr-play" viewBox="0 0 18 18"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></symbol><symbol id="plyr-restart" viewBox="0 0 18 18"><path d="M9.7 1.2l.7 6.4 2.1-2.1c1.9 1.9 1.9 5.1 0 7-.9 1-2.2 1.5-3.5 1.5-1.3 0-2.6-.5-3.5-1.5-1.9-1.9-1.9-5.1 0-7 .6-.6 1.4-1.1 2.3-1.3l-.6-1.9C6 2.6 4.9 3.2 4 4.1 1.3 6.8 1.3 11.2 4 14c1.3 1.3 3.1 2 4.9 2 1.9 0 3.6-.7 4.9-2 2.7-2.7 2.7-7.1 0-9.9L16 1.9l-6.3-.7z"></path></symbol><symbol id="plyr-rewind" viewBox="0 0 18 18"><path d="M10.125 1L0 9l10.125 8v-6.171L18 17V1l-7.875 6.171z"></path></symbol><symbol id="plyr-volume" viewBox="0 0 18 18"><path d="M15.6 3.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4C15.4 5.9 16 7.4 16 9c0 1.6-.6 3.1-1.8 4.3-.4.4-.4 1 0 1.4.2.2.5.3.7.3.3 0 .5-.1.7-.3C17.1 13.2 18 11.2 18 9s-.9-4.2-2.4-5.7z"></path><path d="M11.282 5.282a.909.909 0 0 0 0 1.316c.735.735.995 1.458.995 2.402 0 .936-.425 1.917-.995 2.487a.909.909 0 0 0 0 1.316c.145.145.636.262 1.018.156a.725.725 0 0 0 .298-.156C13.773 11.733 14.13 10.16 14.13 9c0-.17-.002-.34-.011-.51-.053-.992-.319-2.005-1.522-3.208a.909.909 0 0 0-1.316 0zM3.786 6.008H.714C.286 6.008 0 6.31 0 6.76v4.512c0 .452.286.752.714.752h3.072l4.071 3.858c.5.3 1.143 0 1.143-.602V2.752c0-.601-.643-.977-1.143-.601L3.786 6.008z"></path></symbol></svg></div>
+	<section id="loading" class="">
+		<div class="wrap cf show">
+			Welcome to Light-Weigth IoT HuB.
+		</div>
+	</section>
+	<main id="main">
+			<section id="project--form">
+  <div class="fade">
+    <div class="wrap cf">
+      <a href="LWMain.html" id="logo">
+      <span class="close">
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+  </div>
+  <div class="inner">
+        <div class="project--planner-review loading">
+      <div class="ty-message">
+      </div>
+    </div>
+  </div>
+  <div class="fade bottom">
+    <nav id="project--planner-nav" class="hide">
+      <a href="#" id="next" class="prev disabled circle--arrow white left"><span></span></a>
+      <a href="#" id="prev" class="next circle--arrow white right"><span></span></a>
+      <span class="nav--note"></span>
+      <span class="skip hide">Skip</span>
+    </nav>
+  </div>
+</section>
+		<header id="global--header" class="full os-animation animated fadeInUp" data-os-animation="fadeInUp">
+		<div class="wrap cf">
+			<a href="LWMain.html" id="logo" data-loading-title="Welcome to Light-Weight IoT Hub.">
+				<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="lw2.svg"
+   inkscape:version="0.92+devel unknown">
+  <defs
+     id="defs2">
+    <font
+       horiz-adv-x="1024"
+       id="font3470"
+       inkscape:label="fonte 1">
+      <font-face
+         units-per-em="1024"
+         id="font-face3472"
+         font-family="SVGFont 1" />
+      <missing-glyph
+         d="M0,0h1000v1024h-1000z"
+         id="missing-glyph3474" />
+    </font>
+    <font
+       horiz-adv-x="1024"
+       id="font3476"
+       inkscape:label="fonte 2">
+      <font-face
+         units-per-em="1024"
+         id="font-face3478"
+         font-family="SVGFont 2" />
+      <missing-glyph
+         d="M0,0h1000v1024h-1000z"
+         id="missing-glyph3480" />
+    </font>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="372.19748"
+     inkscape:cy="184.63047"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1276"
+     inkscape:window-height="761"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0"
+     showguides="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       aria-label="LW-IoT."
+       transform="matrix(0,1.1522603,-1.2916242,0,287.09658,-102.69146)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.66666412px;font-family:Comfortaa;-inkscape-font-specification:Comfortaa;letter-spacing:0px;text-orientation:upright;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot3462">
+      <path
+         d="m 95.44987,125.19436 q 0,-1.20312 0.838541,-2.04167 0.875,-0.875 2.078125,-0.875 1.203125,0 2.041664,0.875 0.875,0.83855 0.875,2.04167 v 49.58333 h 29.16667 q 1.20312,0 2.04167,0.875 0.875,0.83854 0.875,2.04167 0,1.20312 -0.875,2.07812 -0.83855,0.83855 -2.04167,0.83855 H 98.366536 q -1.203125,0 -2.078125,-0.83855 -0.838541,-0.875 -0.838541,-2.07812 z"
+         id="path3482"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 160.92904,123.11624 q 0.83854,-0.83855 2.04166,-0.83855 1.20313,0 2.07813,0.83855 0.47396,0.51041 0.69271,1.09375 l 11.81249,42.58333 11.8125,-42.58333 q 0.21875,-0.58334 0.72917,-1.09375 0.83854,-0.83855 2.04167,-0.83855 1.20312,0 2.04166,0.875 0.875,0.83855 0.875,2.04167 0,0.61979 -0.21875,1.27604 l -14.29166,51.69792 q -0.29167,0.91146 -0.91146,1.56771 -0.875,0.875 -2.07813,0.875 -1.20312,0 -2.04166,-0.875 -0.65625,-0.65625 -0.91146,-1.53125 l -11.63021,-42 -11.59375,41.96354 q -0.29166,0.91146 -0.91146,1.56771 -0.875,0.875 -2.07812,0.875 -1.20313,0 -2.04167,-0.875 -0.65625,-0.65625 -0.91146,-1.53125 L 131.10612,126.4704 q -0.21875,-0.65625 -0.21875,-1.27604 0,-1.20312 0.83854,-2.04167 0.875,-0.875 2.07813,-0.875 1.20312,0 2.07812,0.83855 0.47396,0.51041 0.69271,1.09375 l 11.8125,42.58333 11.8125,-42.58333 q 0.14583,-0.54688 0.72917,-1.09375 z"
+         id="path3484"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 203.80404,163.11103 q -1.20313,0 -2.07813,-0.83855 -0.83854,-0.875 -0.83854,-2.07812 0,-1.20313 0.83854,-2.04167 0.875,-0.875 2.07813,-0.875 h 17.5 q 1.20312,0 2.04166,0.875 0.875,0.83854 0.875,2.04167 0,1.20312 -0.875,2.07812 -0.83854,0.83855 -2.04166,0.83855 z"
+         id="path3486"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 232.97071,125.19436 q 0,-1.20312 0.83854,-2.04167 0.875,-0.875 2.07812,-0.875 1.20313,0 2.04167,0.875 0.875,0.83855 0.875,2.04167 v 52.5 q 0,1.20312 -0.875,2.07812 -0.83854,0.83855 -2.04167,0.83855 -1.20312,0 -2.07812,-0.83855 -0.83854,-0.875 -0.83854,-2.07812 z"
+         id="path3488"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 288.38737,160.19436 q 0,8.45833 -5.97916,14.4375 -5.97917,5.97917 -14.4375,5.97917 -8.45834,0 -14.4375,-5.97917 -5.97917,-5.97917 -5.97917,-14.4375 0,-8.45833 5.97917,-14.4375 5.97916,-5.97917 14.4375,-5.97917 8.45833,0 14.4375,5.97917 5.97916,5.97917 5.97916,14.4375 z m -20.41666,-14.58333 q -6.05209,0 -10.31771,4.26562 -4.26563,4.26563 -4.26563,10.31771 0,6.05208 4.26563,10.31771 4.26562,4.26562 10.31771,4.26562 6.05208,0 10.31771,-4.26562 4.26562,-4.26563 4.26562,-10.31771 0,-6.05208 -4.26562,-10.31771 -4.26563,-4.26562 -10.31771,-4.26562 z"
+         id="path3490"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 287.80404,128.11103 q -1.20313,0 -2.07813,-0.83854 -0.83854,-0.875 -0.83854,-2.07813 0,-1.20312 0.83854,-2.04167 0.875,-0.875 2.07813,-0.875 h 37.91666 q 1.20313,0 2.04167,0.875 0.875,0.83855 0.875,2.04167 0,1.20313 -0.875,2.07813 -0.83854,0.83854 -2.04167,0.83854 h -16.04166 v 49.58333 q 0,1.20312 -0.875,2.07812 -0.83855,0.83855 -2.04167,0.83855 -1.20313,0 -2.07813,-0.83855 -0.83854,-0.875 -0.83854,-2.07812 v -49.58333 z"
+         id="path3492"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 343.2207,176.23603 q 0,1.82291 -1.27604,3.09895 -1.27605,1.27605 -3.09896,1.27605 -1.82292,0 -3.09896,-1.27605 -1.27604,-1.27604 -1.27604,-3.09895 0,-1.82292 1.27604,-3.09896 1.27604,-1.27604 3.09896,-1.27604 1.82291,0 3.09896,1.27604 1.27604,1.27604 1.27604,3.09896 z"
+         id="path3494"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>		
+			</a>
+			<a href="LWMain.html" id="menu--toggle">
+				<span></span>
+				<span></span>
+			</a>
+			<ul>
+				<li><a href="PlaceCert.html">Provide Certificates</a></li>
+				<li><a href="SetHubID.html">Set Hub ID</a></li>
+				<li><a href="Sensor.html">Define Sensor</a></li>
+				<li><a href="Network.html">Define Network</a></li>
+				<li><a href="Power.html">Power</a></li>
+				<li><a href="ListComm.html">Communication Protocols</a></li>
+			</ul>
+		</div>
+	</header>
+	<nav id="full--menu" class="">
+		<div class="wrap cf">
+			<ul class="main--menu">
+				<li><a href="PlaceCert.html" data-loading-title="Place the Certificate Downloaded From C2NeT Platform.">Provide Certificates</a></li>
+				<li><a href="SetHubID.html" data-loading-title="Set Hub ID assigned by C2NET Platform.">Set Hub ID</a></li>
+				<li><a href="Sensor.html" data-loading-title="Add,Select,Remove Sensing Elements.">Define Sensor</a></li>
+				<li><a href="Network.html" data-loading-title="Add,Select,Remove Sensing Elements.">Define Network</a></li>
+				<li><a href="Power.html" data-loading-title="Listing Active Sensing Elements.">Power</a></li>
+				<li><a href="ListComm.html" data-loading-title="List Available Communication Protocols">Communication Protocols</a></li>
+			</ul>
+			<ul class="secondary--menu">
+				<li><a href="http://gris.uninova.pt" data-loading-title="The legal stuff.">Terms &amp; Conditions</a></li>
+				<li><a href="http://gris.uninova.pt" data-loading-title="The legal stuff.">Privacy Policy</a></li>
+			</ul>
+			<a href="http://gris.uninova.pt" class="tablet--up arrow--right white start--project">GRIS/Uninova</a>
+		</div>
+	</nav>
+	<div class="alert alert-success alert-dismissible fade in text-center hidden" role="alert" id="success">
+  <strong>Well done!</strong> You successfully updated <a href="#" class="alert-link"> the defined Sensors</a>.
+	</div>	  
+<div class="alert alert-danger alert-dismissible fade in text-center hidden" role="alert" id="failure">
+  <strong>UHMMM!</strong> Something bad happened <a href="#" class="alert-link">here:(</a>.
+	</div>	
+<section class="full" id="page--hero">
+
+
+
+<div class="container">
+    <div class="row clearfix">
+    	<div class="col-md-12 table-responsive">
+			<table class="table table-bordered table-hover table-sortable" id="tab_logic">
+				<thead id="head">
+				</thead>
+					<tbody id = "body">
+    					</tbody>
+			</table>
+		</div>
+	</div>
+	<a id="add_row" class="btn btn-default pull-right">Add</a>
+
+</div>	
+
+<div class="menu-button"><i class="zmdi zmdi-apps"></i>
+<a id="plus" target="blank"><i class="zmdi zmdi-save"></i></a>
+<a id="minus" target="blank"><i class="zmdi zmdi-help"></i></a>
+			</div>
+
+</section>
+
+
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="LWFiles/rangeslider.js"></script>
+<script type="text/javascript" src="LWFiles/project-planner.js"></script>
+<script type="text/javascript" src="LWFiles/waypoints.js"></script>
+<script type="text/javascript" src="LWFiles/slick.js"></script>
+<script type="text/javascript" src="LWFiles/ScrollMagic.js"></script>
+<script type="text/javascript" src="LWFiles/debug.js"></script>
+<script type="text/javascript" src="LWFiles/scripts-min.js"></script>
+<script type="text/javascript" src="LWFiles/wp-embed.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.1/TweenMax.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+	var titles = ["NodeID","Sensor Type","Sensor ID","Sensor Name","Frequency"];
+	$('#head').append("<tr>");
+	for (var i = 0; i < titles.length; i++){
+		$('#head').append("<th class=\"text-center\" style=\"background-color: LightSeaGreen;\">"+titles[i]+"</th>");
+	}
+
+
+	$('#head').append("<th class=\"text-center\" style=\"border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;\"></th></tr>");
+	
+
+	
+	jQuery.extend({
+        getValues: function(url) {
+        	var result = null;
+        	$.ajax({
+    		'url' : url,
+    		'type' : 'GET',
+    		 async: false,
+		'success' : function(data) {
+			result = JSON.parse(data);
+		}});
+	       	return result;
+    	}		
+	});
+	var all_sensors = $.getValues("/allsensors");
+	var all_alive =	$.getValues("/allselected");
+	var options="";
+	var flag = false;
+	for(var f=0; f < all_alive.length; f++){
+		options+=('<option value="'+f+'">'+all_alive[f].sensor+'</option>')
+	}
+
+
+
+	$('#body').append("<tr id=\"addr0\" data-id=\"0\" class=\"hidden\">");
+	if(all_sensors!=null)
+	for (var i = 0;i<all_sensors.length; i++){
+				
+					var str = '';
+
+				str+="<tr id=\"addr"+ i +"\" data-id=\""+i+" \">\n";
+				str+="<td data-name=\"name\"><input id=\"name"+i+"\" type=\"text\" name='name"+i+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
+				str+=' <td><select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="typesensor'+i+'"><option selected></option></select></td>'
+				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+i+"\" type=\"text\" name='sensorid"+i+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+i+"\" type=\"text\" name='sensorname"+i+"'  placeholder='Sensor Name.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"freq\"><input id=\"freq"+i+"\" type=\"text\" name='freq"+i+"'  placeholder='Frequency of collection of Data.' class=\"form-control\"/></td>\n";
+				str+='<td data-name="del"><button name="del'+i+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
+				$('#body').append(str);
+				
+				$("#name"+i).val(all_sensors[i].nodeid);  
+				$("#sensorid"+i).val(all_sensors[i].id);  
+				$("#sensorname"+i).val(all_sensors[i].name);				
+				$("#typesensor"+i).append(options);
+				console.log(all_sensors[i]);
+				$("#typesensor"+i+' option:contains("'+all_sensors[i].type_name+'")').prop('selected',true);
+				$("#freq"+i).val(all_sensors[i].freq);
+
+	}
+
+	$("#addr0").hide();
+
+$(document).ready(function() {
+    $("#add_row").on("click", function() {
+        // Dynamic Rows Code
+        
+        // Get max row id and set new id
+        var newid = 0;
+        $.each($("#tab_logic tr"), function() {
+            if (parseInt($(this).data("id")) > newid) {
+                newid = parseInt($(this).data("id"));
+            }
+        });
+        newid++;
+       	console.log(newid); 
+        		var str = '';
+			str+="<tr id=\"addr"+ newid +"\" data-id=\""+newid+" \">\n";
+					str+="<td data-name=\"name\"><input id=\"name"+newid+"\" type=\"text\" name='name"+newid+"'  placeholder='ID of Node were Sensor was placed.' class=\"form-control\"/></td>\n";
+				str+=' <td><select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="typesensor'+newid+'"><option selected></option></select></td>'
+				
+				str+="<td data-name=\"sensorid\"><input id=\"sensorid"+newid+"\" type=\"text\" name='sensorid"+newid+"'  placeholder='Unique Id for this Sensor.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"sensorname\"><input id=\"sensorname"+newid+"\" type=\"text\" name='sensorname"+newid+"'  placeholder='This Sensor Name.' class=\"form-control\"/></td>\n";
+				str+="<td data-name=\"freq\"><input id=\"freq"+newid+"\" type=\"text\" name='freq"+newid+"'  placeholder='Frequency of collection of Data.' class=\"form-control\"/></td>\n";
+				
+			str+='<td data-name="del"><button name="del'+newid+'" class="btn btn-danger glyphicon glyphicon-remove row-remove"></button></td></tr>';
+				$('#body').append(str);
+				
+				$("#typesensor"+newid).append(options);
+	$("td button.row-remove").on("click", function(){
+	$(this).closest("tr").remove();
+});
+	
+	});
+
+
+$("#plus").on("click",function(){
+	
+//	$( "#myselect option:selected" ).text();
+	var typeid=[];
+	var typename=[];
+	$('[id^=typesensor] option:selected').each(function(){
+		typename.push($(this).text());
+		for (var i = 0; i < all_alive.length ; i++){
+			if ($(this).text()==all_alive[i].sensor){
+				typeid.push(all_alive[i].code);
+			}
+		}
+	
+	})
+	var out =[];
+	var obj = {};
+	var nodesid=[]; 
+	$('[id^=name]').each(function(arr){
+		nodesid.push($(this).val())
+	});
+
+	var freq=[]; 
+	$('[id^=freq]').each(function(arr){
+		freq.push($(this).val())
+	});
+	var ids=[]
+	$('[id^=sensorid]').each(function(arr){
+		ids.push($(this).val())
+	});
+	var names=[]
+	$('[id^=sensorname]').each(function(arr){
+		names.push($(this).val())
+	});
+
+	for (var i = 0; i < nodesid.length ; i++){
+			obj.nodeid= nodesid[i];
+			obj.typeid = typeid[i];
+		        obj.type_name = typename[i]; 	
+		        obj.id = ids[i]; 	
+		        obj.name = names[i]; 	
+		        obj.freq = freq[i]; 	
+			out.push(obj);
+			obj = {};
+			
+
+	}
+	
+	console.log(out);
+	$.ajax({
+    		'url' : '/sensor',
+    		'type' : 'POST',
+		 contentType: 'application/json',
+		 data: JSON.stringify(out), 
+		'success' : function(data) {
+			$("#success").removeClass('hidden');
+			setTimeout(function() { $("#success").addClass('hidden');}, 4000);
+
+		},
+		'failure': function(data){
+			$("#failure").removeClass('hidden');
+			setTimeout(function() { $("#failure").addClass('hidden');}, 4000);
+
+		},
+	});
+});
+
+
+    
+$("td button.row-remove").on("click", function(){
+							var id = $(this).attr('name').replace("del","");
+							var obj={};
+							obj.nodeid=$('[id=name'+id+']').val();
+							obj.id=$('[id=sensorid'+id+']').val();
+							console.log($('[id=name'+id+']').val());
+							console.log($('[id=sensorid'+id+']').val());
+							console.log(obj);
+	$.ajax({
+    		'url' : '/sensor',
+    		'type' : 'DELETE',
+		 contentType: 'application/json',
+		 data: JSON.stringify(obj), 
+		'success' : function(data) {
+
+		},
+		'failure': function(data){
+
+		},
+	});
+
+
+	$(this).closest("tr").remove();
+});
+
+ $("#minus").click(function(){
+
+  	window.location.replace("HelpNetwork.html");
+  });
+
+
+});
+
+</script>
+
+
+ 
+</body></html>
+<!-- end of site -->

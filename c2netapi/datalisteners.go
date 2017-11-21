@@ -19,7 +19,7 @@ type Comm struct {
 }
 
 func ReadDataListeners() ([]string, bool) {
-	dat, err := ioutil.ReadFile("/tmp/configs.xml")
+	dat, err := ioutil.ReadFile("/opt/c2net-iot-hub/Resources/configs.xml")
 	if err != nil {
 		return nil, false
 	}
@@ -45,7 +45,7 @@ func WriteDataListeners(newinput []string) bool {
 		d1 += "\n"
 	}
 	d1 += "</CommunicationListeners>"
-	err := ioutil.WriteFile("/tmp/configs.xml", []byte(d1), 0644)
+	err := ioutil.WriteFile("/opt/c2net-iot-hub/Resources/configs.xml", []byte(d1), 0644)
 	if err != nil {
 		return false
 	}

@@ -15,7 +15,7 @@ func NewRouter() *mux.Router {
 			Name(route.Name).
 			Handler(route.HandlerFunc)
 	}
-	router.PathPrefix("/site/").Handler(http.StripPrefix("/site/", http.FileServer(http.Dir("/home/psimoes/Github/c2net-golang-rest-api/c2net-iot-hub-site/"))))
+	router.PathPrefix("/site/").Handler(http.StripPrefix("/site/", http.FileServer(http.Dir("/home/pi/Github/c2net-golang-rest-api/c2net-iot-hub-site/"))))
 
 	return router
 }

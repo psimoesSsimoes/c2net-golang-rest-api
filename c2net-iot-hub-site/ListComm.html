@@ -216,7 +216,8 @@ img.emoji {
 				<li style="margin: 35px 0;"><a href="PlaceCert.html">Provide Certificates</a></li>
 				<li style="margin: 35px 0;"><a href="SetHubID.html">Set Hub ID</a></li>
 				<li style="margin: 35px 0;"><a href="Sensor.html">Define Sensor</a></li>
-				<li style="margin: 35px 0;"><a href="Node.html">Set Platform Endpoint</a></li>
+				<li style="margin: 35px 0;"><a href="Network.html">Define Network</a></li>
+				<li style="margin: 35px 0;"><a href="Power.html">Power</a></li>
 				<li style="margin: 35px 0;"><a href="ListComm.html">Communication Protocols</a></li>
 			</ul>
 		</div>
@@ -227,7 +228,8 @@ img.emoji {
 				<li style="margin: 35px 0;"><a href="PlaceCert.html" data-loading-title="Place the Certificate Downloaded From C2NeT Platform.">Provide Certificates</a></li>
 				<li style="margin: 35px 0;"><a href="SetHubID.html" data-loading-title="Set Hub ID assigned by C2NET Platform.">Set Hub ID</a></li>
 				<li style="margin: 35px 0;"><a href="Sensor.html" data-loading-title="Add,Select,Remove Sensing Elements.">Define Sensor</a></li>
-				<li style="margin: 35px 0;"><a href="Node.html" data-loading-title="Set C2NeT Platform Endpoint.">Define Node</a></li>
+				<li style="margin: 35px 0;"><a href="Network.html" data-loading-title="Add,Select,Remove Sensing Elements.">Define Network</a></li>
+				<li style="margin: 35px 0;"><a href="Power.html" data-loading-title="Set C2NeT Platform Endpoint.">Power</a></li>
 				<li style="margin: 35px 0;"><a href="ListComm.html" data-loading-title="Communication Protocols">Communication Protocols</a></li>
 			</ul>
 			<ul class="secondary--menu">
@@ -323,11 +325,13 @@ var dropdown = $('.dropdown');
 	    console.log(data);
 	    var arr = $.parseJSON(data);
 	    for (i=0; i < arr.length ; i++){
-	    	switch(arr[i]){
+		console.log(arr[i]);
+	    	switch(arr[i].trim()){
 			case "DataListenerSerialPort":$('#serial').click();break;	
 			case "DataListenerZigBee":$('#zig').click();break;	
 			case "DataListenerSocketUdp":$('#sock').click();break;	
 			case "DataListenerCanBus":$('#can').click();break;
+			case "DataListenerPistolReader":$('#serial').click();break;
 			default:
 		}
 	    }
@@ -436,9 +440,7 @@ dtlAdd.on('click', function(){
 		'contentType':'application/json',
 		'data': JSON.stringify(x),
     		'success' : function(data) {
-	    		Materialize.toast('Updated Communication Protocols!', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast
-
-	    		Materialize.toast('The Hub will restart in 40 seconds!', 3000, 'rounded') // 'rounded' is the class I'm applying to the toast	
+			alert("success!");
 		}})
 	  }
 });

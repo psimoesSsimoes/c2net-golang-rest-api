@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	router := c2netapi.NewRouter()
 	log.Fatal(http.ListenAndServe(":8080", router))
 
