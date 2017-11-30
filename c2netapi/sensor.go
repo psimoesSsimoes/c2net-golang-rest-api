@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+
 	_ "github.com/mattn/go-sqlite3"
 	log "github.com/sirupsen/logrus"
 )
@@ -25,26 +26,26 @@ type Sensor struct {
 returns all sensor areas
 */
 func AllSensors(w http.ResponseWriter, r *http.Request) {
-			db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
+	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 
-		var sensors []Sensor
-		log.Info("aRRIVED HERE")
-		rows, err := db.Query("SELECT * FROM sensors")
+	var sensors []Sensor
+	log.Info("aRRIVED HERE")
+	rows, err := db.Query("SELECT * FROM sensors")
 
-		for rows.Next() {
+	for rows.Next() {
 
-			var s Sensor
-			err = rows.Scan(&s.Nodeid, &s.Typeid, &s.Typename, &s.Id, &s.Name, &s.Freq)
-			if err != nil {
-				log.Error(err.Error())
-				json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
-				return
-			}
-			sensors = append(sensors, s)
+		var s Sensor
+		err = rows.Scan(&s.Nodeid, &s.Typeid, &s.Typename, &s.Id, &s.Name, &s.Freq)
+		if err != nil {
+			log.Error(err.Error())
+			json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Failed to select an sensor from database"})
+			return
 		}
-		log.Info(sensors)
-		json.NewEncoder(w).Encode(sensors)
+		sensors = append(sensors, s)
+	}
+	log.Info(sensors)
+	json.NewEncoder(w).Encode(sensors)
 }
 
 func InsertSensor(w http.ResponseWriter, r *http.Request) {
@@ -63,7 +64,7 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 			log.Error(err.Error())
 		}
 		log.Info("passed decode")
-		
+		fmt.Println("passed decode")
 		defer db.Close()
 		for _, v := range sensors {
 
@@ -72,8 +73,15 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 			_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name, v.Freq)
 			if err != nil {
 				log.Info("entered error")
-				log.Error(err.Error()) // proper error handling instead of panic in your app
-				json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
+				stmt, _ = db.Prepare("UPDATE sensors SET typeid = (?),typename = (?),id =(?),name=(?),freq=(?) where nodeid = (?)")
+
+				_, err = stmt.Exec(v.Typeid, v.Typename, v.Id, v.Name, v.Freq, v.Nodeid)
+				if err != nil {
+
+					json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
+					return
+				}
+
 			}
 		}
 		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully Inserted SensorArea Into the Database", Body: fmt.Sprintf("%+v\n", sensors)})
@@ -93,17 +101,17 @@ func DeleteSensor(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Error(err.Error())
 		}
-		log.Info(sensor)	
+		log.Info(sensor)
 		stmt, _ := db.Prepare("DELETE FROM sensors WHERE nodeid = (?) and id = (?)")
-			_, err = stmt.Exec(sensor.Nodeid, sensor.Id)
-			if err != nil {
-				log.Info("entered error")
-				log.Error(err.Error()) // proper error handling instead of panic in your app
-				json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
-			}else{
+		_, err = stmt.Exec(sensor.Nodeid, sensor.Id)
+		if err != nil {
+			log.Info("entered error")
+			log.Error(err.Error()) // proper error handling instead of panic in your app
+			json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
+		} else {
 
-		json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully Deleted Sensor from the Database", Body: fmt.Sprintf("%+v\n", sensor)})
-			}
+			json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully Deleted Sensor from the Database", Body: fmt.Sprintf("%+v\n", sensor)})
+		}
 
 	}
 }
