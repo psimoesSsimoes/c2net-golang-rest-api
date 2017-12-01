@@ -22,6 +22,8 @@ type Sensor struct {
 	Freq     string `json:"freq"`
 }
 
+var gsensors map[string]Sensor
+
 /**
 returns all sensor areas
 */
@@ -49,6 +51,11 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 }
 
 func InsertSensor(w http.ResponseWriter, r *http.Request) {
+
+	if gsensors == nil {
+		gsensors = make(map[string]Sensor, 0)
+	}
+
 	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
 	if err != nil {
@@ -56,30 +63,33 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 	} else {
 
 		decoder := json.NewDecoder(r.Body)
-		log.Info(decoder)
 		var sensors []Sensor
 		err = decoder.Decode(&sensors)
-		log.Info(len(sensors))
 		if err != nil {
 			log.Error(err.Error())
 		}
-		log.Info("passed decode")
-		fmt.Println("passed decode")
 		defer db.Close()
 		for _, v := range sensors {
 
-			log.Info(v)
-			stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name,freq) values(?,?,?,?,?,?)")
-			_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name, v.Freq)
-			if err != nil {
-				log.Info("entered error")
-				stmt, _ = db.Prepare("UPDATE sensors SET typeid = (?),typename = (?),id =(?),name=(?),freq=(?) where nodeid = (?)")
+			_, ok := gsensors[v.Nodeid]
 
-				_, err = stmt.Exec(v.Typeid, v.Typename, v.Id, v.Name, v.Freq, v.Nodeid)
+			if !ok {
+				stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name,freq) values(?,?,?,?,?,?)")
+				_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name, v.Freq)
 				if err != nil {
-
+					log.Info("entered error")
 					json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
 					return
+				} else {
+					gsensors[v.Nodeid] = v
+				}
+
+			} else {
+				stmt, _ := db.Prepare("UPDATE sensors SET typeid = (?),typename = (?),id =(?),name=(?),freq=(?) where nodeid = (?)")
+
+				_, err = stmt.Exec(v.Typeid, v.Typename, v.Id, v.Name, v.Freq, v.Nodeid)
+				if err == nil {
+					gsensors[v.Nodeid] = v
 				}
 
 			}
@@ -109,7 +119,7 @@ func DeleteSensor(w http.ResponseWriter, r *http.Request) {
 			log.Error(err.Error()) // proper error handling instead of panic in your app
 			json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
 		} else {
-
+			delete(gsensors, sensor.Nodeid)
 			json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully Deleted Sensor from the Database", Body: fmt.Sprintf("%+v\n", sensor)})
 		}
 
