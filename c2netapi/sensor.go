@@ -28,13 +28,15 @@ var gsensors map[string]Sensor
 returns all sensor areas
 */
 func AllSensors(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
+	db, _ := sql.Open("sqlite3", "/home/pi/C2NET/c2net-iot-hub/tables/c2net.db")
 	defer db.Close()
+	
 
 	var sensors []Sensor
+	if gsensors==nil{
 	log.Info("aRRIVED HERE")
 	rows, err := db.Query("SELECT * FROM sensors")
-
+	gsensors=make(map[string]Sensor,0)
 	for rows.Next() {
 
 		var s Sensor
@@ -45,7 +47,14 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		sensors = append(sensors, s)
+		gsensors[s.Nodeid]=s
 	}
+}else{
+	for _,v := range gsensors{
+
+		sensors = append(sensors, v)
+	}
+}
 	log.Info(sensors)
 	json.NewEncoder(w).Encode(sensors)
 }
@@ -85,9 +94,9 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 				}
 
 			} else {
-				stmt, _ := db.Prepare("UPDATE sensors SET typeid = (?),typename = (?),id =(?),name=(?),freq=(?) where nodeid = (?)")
+				stmt, _ := db.Prepare("UPDATE sensors SET typeid = (?),typename = (?),name=(?),freq=(?) where nodeid = (?) and id =(?)")
 
-				_, err = stmt.Exec(v.Typeid, v.Typename, v.Id, v.Name, v.Freq, v.Nodeid)
+				_, err = stmt.Exec(v.Typeid, v.Typename, v.Id, v.Name, v.Freq, v.Nodeid, v.Id)
 				if err == nil {
 					gsensors[v.Nodeid] = v
 				}
