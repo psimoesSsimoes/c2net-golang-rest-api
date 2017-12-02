@@ -47,7 +47,7 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		sensors = append(sensors, s)
-		gsensors[s.Nodeid]=s
+		gsensors[s.Nodeid+s.Id]=s
 	}
 }else{
 	for _,v := range gsensors{
@@ -80,7 +80,7 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 		defer db.Close()
 		for _, v := range sensors {
 
-			_, ok := gsensors[v.Nodeid]
+			_, ok := gsensors[v.Nodeid+v.Id]
 
 			if !ok {
 				stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name,freq) values(?,?,?,?,?,?)")
@@ -90,7 +90,7 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 					json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
 					return
 				} else {
-					gsensors[v.Nodeid] = v
+					gsensors[v.Nodeid+v.Id] = v
 				}
 
 			} else {
@@ -98,7 +98,7 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 
 				_, err = stmt.Exec(v.Typeid, v.Typename, v.Id, v.Name, v.Freq, v.Nodeid, v.Id)
 				if err == nil {
-					gsensors[v.Nodeid] = v
+					gsensors[v.Nodeid+v.Id] = v
 				}
 
 			}
@@ -128,7 +128,7 @@ func DeleteSensor(w http.ResponseWriter, r *http.Request) {
 			log.Error(err.Error()) // proper error handling instead of panic in your app
 			json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
 		} else {
-			delete(gsensors, sensor.Nodeid)
+			delete(gsensors, sensor.Nodeid+sensor.Id)
 			json.NewEncoder(w).Encode(HttpResp{Status: 200, Description: "Successfully Deleted Sensor from the Database", Body: fmt.Sprintf("%+v\n", sensor)})
 		}
 
