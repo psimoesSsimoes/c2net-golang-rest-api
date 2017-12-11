@@ -417,8 +417,15 @@ $(document).ready(function(){
     			'success' : function(data) {
 	    			console.log(data);
 				alert("updating succefully and restarting hub");
-			}});
-	  
+
+			$.ajax({
+   			 	url: "/restart",
+    		    		type: 'GET',
+    				success: function (data) { 
+				
+				}});
+	
+			}		  
 
 
   })
