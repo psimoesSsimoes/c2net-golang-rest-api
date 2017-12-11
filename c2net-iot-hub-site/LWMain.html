@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en-GB" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html lang="en-GB" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html lang="en-GB" prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html prefix="og: http://ogp.me/ns#" class=" js flexbox webgl no-touch geolocation hashchange history websockets rgba hsla multiplebgs backgroundsize borderimage textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage applicationcache svg svgclippaths mediaqueries no-regions supports" style="" lang="en-GB"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+
+
+		<title>LW-IoT Hub</title>
+
+				<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="theme-color" content="#000">
+
+
+				
+<!-- This site is optimized with the Yoast SEO plugin v4.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="">
+<link rel="canonical" href="#">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LW-IoT Hub">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script src="LWFiles/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="animate-css" href="LWFiles/animate.css" type="text/css" media="all">
+<link rel="stylesheet" id="stylesheet-css" href="LWFiles/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="LWFiles/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" href="LWFiles/typing.css" type="text/css" media="all">
+<script type="text/javascript" src="LWFiles/jquery.js"></script>
+<script type="text/javascript" src="LWFiles/jquery-migrate.js"></script>
+<script type="text/javascript" src="LWFiles/modernizr.js"></script>
+
+	<body class="page-template page-template-studio page-template-studio-php page page-id-31" itemscope="" itemtype="http://schema.org/WebPage"><div id="sprite-plyr" hidden=""><!--?xml version="1.0" encoding="UTF-8"?--><><svg xmlns="http://www.w3.org/2000/svg"><symbol id="plyr-captions-off" viewBox="0 0 18 18"><path d="M1 1c-.6 0-1 .4-1 1v11c0 .6.4 1 1 1h4.6l2.7 2.7c.2.2.4.3.7.3.3 0 .5-.1.7-.3l2.7-2.7H17c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1H1zm4.52 10.15c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41C8.47 4.96 7.46 3.76 5.5 3.76c-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69zm7.57 0c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41c-.28-1.15-1.29-2.35-3.25-2.35-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69z" fill-rule="evenodd" fill-opacity=".5"></path></symbol><symbol id="plyr-captions-on" viewBox="0 0 18 18"><path d="M1 1c-.6 0-1 .4-1 1v11c0 .6.4 1 1 1h4.6l2.7 2.7c.2.2.4.3.7.3.3 0 .5-.1.7-.3l2.7-2.7H17c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1H1zm4.52 10.15c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41C8.47 4.96 7.46 3.76 5.5 3.76c-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69zm7.57 0c1.99 0 3.01-1.32 3.28-2.41l-1.29-.39c-.19.66-.78 1.45-1.99 1.45-1.14 0-2.2-.83-2.2-2.34 0-1.61 1.12-2.37 2.18-2.37 1.23 0 1.78.75 1.95 1.43l1.3-.41c-.28-1.15-1.29-2.35-3.25-2.35-1.9 0-3.61 1.44-3.61 3.7 0 2.26 1.65 3.69 3.63 3.69z" fill-rule="evenodd"></path></symbol><symbol id="plyr-enter-fullscreen" viewBox="0 0 18 18"><path d="M10 3h3.6l-4 4L11 8.4l4-4V8h2V1h-7zM7 9.6l-4 4V10H1v7h7v-2H4.4l4-4z"></path></symbol><symbol id="plyr-exit-fullscreen" viewBox="0 0 18 18"><path d="M1 12h3.6l-4 4L2 17.4l4-4V17h2v-7H1zM16 .6l-4 4V1h-2v7h7V6h-3.6l4-4z"></path></symbol><symbol id="plyr-fast-forward" viewBox="0 0 18 18"><path d="M7.875 7.171L0 1v16l7.875-6.171V17L18 9 7.875 1z"></path></symbol><symbol id="plyr-muted" viewBox="0 0 18 18"><path d="M12.4 12.5l2.1-2.1 2.1 2.1 1.4-1.4L15.9 9 18 6.9l-1.4-1.4-2.1 2.1-2.1-2.1L11 6.9 13.1 9 11 11.1zM3.786 6.008H.714C.286 6.008 0 6.31 0 6.76v4.512c0 .452.286.752.714.752h3.072l4.071 3.858c.5.3 1.143 0 1.143-.602V2.752c0-.601-.643-.977-1.143-.601L3.786 6.008z"></path></symbol><symbol id="plyr-pause" viewBox="0 0 18 18"><path d="M6 1H3c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1zM12 1c-.6 0-1 .4-1 1v14c0 .6.4 1 1 1h3c.6 0 1-.4 1-1V2c0-.6-.4-1-1-1h-3z"></path></symbol><symbol id="plyr-play" viewBox="0 0 18 18"><path d="M15.562 8.1L3.87.225C3.052-.337 2 .225 2 1.125v15.75c0 .9 1.052 1.462 1.87.9L15.563 9.9c.584-.45.584-1.35 0-1.8z"></path></symbol><symbol id="plyr-restart" viewBox="0 0 18 18"><path d="M9.7 1.2l.7 6.4 2.1-2.1c1.9 1.9 1.9 5.1 0 7-.9 1-2.2 1.5-3.5 1.5-1.3 0-2.6-.5-3.5-1.5-1.9-1.9-1.9-5.1 0-7 .6-.6 1.4-1.1 2.3-1.3l-.6-1.9C6 2.6 4.9 3.2 4 4.1 1.3 6.8 1.3 11.2 4 14c1.3 1.3 3.1 2 4.9 2 1.9 0 3.6-.7 4.9-2 2.7-2.7 2.7-7.1 0-9.9L16 1.9l-6.3-.7z"></path></symbol><symbol id="plyr-rewind" viewBox="0 0 18 18"><path d="M10.125 1L0 9l10.125 8v-6.171L18 17V1l-7.875 6.171z"></path></symbol><symbol id="plyr-volume" viewBox="0 0 18 18"><path d="M15.6 3.3c-.4-.4-1-.4-1.4 0-.4.4-.4 1 0 1.4C15.4 5.9 16 7.4 16 9c0 1.6-.6 3.1-1.8 4.3-.4.4-.4 1 0 1.4.2.2.5.3.7.3.3 0 .5-.1.7-.3C17.1 13.2 18 11.2 18 9s-.9-4.2-2.4-5.7z"></path><path d="M11.282 5.282a.909.909 0 0 0 0 1.316c.735.735.995 1.458.995 2.402 0 .936-.425 1.917-.995 2.487a.909.909 0 0 0 0 1.316c.145.145.636.262 1.018.156a.725.725 0 0 0 .298-.156C13.773 11.733 14.13 10.16 14.13 9c0-.17-.002-.34-.011-.51-.053-.992-.319-2.005-1.522-3.208a.909.909 0 0 0-1.316 0zM3.786 6.008H.714C.286 6.008 0 6.31 0 6.76v4.512c0 .452.286.752.714.752h3.072l4.071 3.858c.5.3 1.143 0 1.143-.602V2.752c0-.601-.643-.977-1.143-.601L3.786 6.008z"></path></symbol></svg></div>
+	<section id="loading" class="">
+		<div class="wrap cf show">
+			Welcome to Light-Weigth IoT HuB.
+		</div>
+	</section>
+	<main id="main">
+			<section id="project--form">
+  <div class="fade">
+    <div class="wrap cf">
+      <a href="#" id="logo">
+      <span class="close">
+        <span></span>
+        <span></span>
+      </span>
+    </div>
+  </div>
+  <div class="inner">
+        <div class="project--planner-review loading">
+      <div class="ty-message">
+        Thank you <span id="review--name">Jane</span>, somebody will be in touch<br> about your <div id="review--services"><span id="branding">branding</span></div> project soon.
+      </div>
+    </div>
+  </div>
+  <div class="fade bottom">
+    <nav id="project--planner-nav" class="hide">
+      <a href="#" id="next" class="prev disabled circle--arrow white left"><span></span></a>
+      <a href="#" id="prev" class="next circle--arrow white right"><span></span></a>
+      <span class="nav--note"></span>
+      <span class="skip hide">Skip</span>
+    </nav>
+  </div>
+</section>
+		<header id="global--header" class="full">
+		<div class="wrap cf">
+			<a href="#" id="logo" data-loading-title="Welcome to Light-Weight IoT Hub.">
+				<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="lw2.svg"
+   inkscape:version="0.92+devel unknown">
+  <defs
+     id="defs2">
+    <font
+       horiz-adv-x="1024"
+       id="font3470"
+       inkscape:label="fonte 1">
+      <font-face
+         units-per-em="1024"
+         id="font-face3472"
+         font-family="SVGFont 1" />
+      <missing-glyph
+         d="M0,0h1000v1024h-1000z"
+         id="missing-glyph3474" />
+    </font>
+    <font
+       horiz-adv-x="1024"
+       id="font3476"
+       inkscape:label="fonte 2">
+      <font-face
+         units-per-em="1024"
+         id="font-face3478"
+         font-family="SVGFont 2" />
+      <missing-glyph
+         d="M0,0h1000v1024h-1000z"
+         id="missing-glyph3480" />
+    </font>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="372.19748"
+     inkscape:cy="184.63047"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1276"
+     inkscape:window-height="761"
+     inkscape:window-x="0"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0"
+     showguides="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       aria-label="LW-IoT."
+       transform="matrix(0,1.1522603,-1.2916242,0,287.09658,-102.69146)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:74.66666412px;font-family:Comfortaa;-inkscape-font-specification:Comfortaa;letter-spacing:0px;text-orientation:upright;fill:#000000;fill-opacity:1;stroke:none"
+       id="flowRoot3462">
+      <path
+         d="m 95.44987,125.19436 q 0,-1.20312 0.838541,-2.04167 0.875,-0.875 2.078125,-0.875 1.203125,0 2.041664,0.875 0.875,0.83855 0.875,2.04167 v 49.58333 h 29.16667 q 1.20312,0 2.04167,0.875 0.875,0.83854 0.875,2.04167 0,1.20312 -0.875,2.07812 -0.83855,0.83855 -2.04167,0.83855 H 98.366536 q -1.203125,0 -2.078125,-0.83855 -0.838541,-0.875 -0.838541,-2.07812 z"
+         id="path3482"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 160.92904,123.11624 q 0.83854,-0.83855 2.04166,-0.83855 1.20313,0 2.07813,0.83855 0.47396,0.51041 0.69271,1.09375 l 11.81249,42.58333 11.8125,-42.58333 q 0.21875,-0.58334 0.72917,-1.09375 0.83854,-0.83855 2.04167,-0.83855 1.20312,0 2.04166,0.875 0.875,0.83855 0.875,2.04167 0,0.61979 -0.21875,1.27604 l -14.29166,51.69792 q -0.29167,0.91146 -0.91146,1.56771 -0.875,0.875 -2.07813,0.875 -1.20312,0 -2.04166,-0.875 -0.65625,-0.65625 -0.91146,-1.53125 l -11.63021,-42 -11.59375,41.96354 q -0.29166,0.91146 -0.91146,1.56771 -0.875,0.875 -2.07812,0.875 -1.20313,0 -2.04167,-0.875 -0.65625,-0.65625 -0.91146,-1.53125 L 131.10612,126.4704 q -0.21875,-0.65625 -0.21875,-1.27604 0,-1.20312 0.83854,-2.04167 0.875,-0.875 2.07813,-0.875 1.20312,0 2.07812,0.83855 0.47396,0.51041 0.69271,1.09375 l 11.8125,42.58333 11.8125,-42.58333 q 0.14583,-0.54688 0.72917,-1.09375 z"
+         id="path3484"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 203.80404,163.11103 q -1.20313,0 -2.07813,-0.83855 -0.83854,-0.875 -0.83854,-2.07812 0,-1.20313 0.83854,-2.04167 0.875,-0.875 2.07813,-0.875 h 17.5 q 1.20312,0 2.04166,0.875 0.875,0.83854 0.875,2.04167 0,1.20312 -0.875,2.07812 -0.83854,0.83855 -2.04166,0.83855 z"
+         id="path3486"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 232.97071,125.19436 q 0,-1.20312 0.83854,-2.04167 0.875,-0.875 2.07812,-0.875 1.20313,0 2.04167,0.875 0.875,0.83855 0.875,2.04167 v 52.5 q 0,1.20312 -0.875,2.07812 -0.83854,0.83855 -2.04167,0.83855 -1.20312,0 -2.07812,-0.83855 -0.83854,-0.875 -0.83854,-2.07812 z"
+         id="path3488"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 288.38737,160.19436 q 0,8.45833 -5.97916,14.4375 -5.97917,5.97917 -14.4375,5.97917 -8.45834,0 -14.4375,-5.97917 -5.97917,-5.97917 -5.97917,-14.4375 0,-8.45833 5.97917,-14.4375 5.97916,-5.97917 14.4375,-5.97917 8.45833,0 14.4375,5.97917 5.97916,5.97917 5.97916,14.4375 z m -20.41666,-14.58333 q -6.05209,0 -10.31771,4.26562 -4.26563,4.26563 -4.26563,10.31771 0,6.05208 4.26563,10.31771 4.26562,4.26562 10.31771,4.26562 6.05208,0 10.31771,-4.26562 4.26562,-4.26563 4.26562,-10.31771 0,-6.05208 -4.26562,-10.31771 -4.26563,-4.26562 -10.31771,-4.26562 z"
+         id="path3490"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 287.80404,128.11103 q -1.20313,0 -2.07813,-0.83854 -0.83854,-0.875 -0.83854,-2.07813 0,-1.20312 0.83854,-2.04167 0.875,-0.875 2.07813,-0.875 h 37.91666 q 1.20313,0 2.04167,0.875 0.875,0.83855 0.875,2.04167 0,1.20313 -0.875,2.07813 -0.83854,0.83854 -2.04167,0.83854 h -16.04166 v 49.58333 q 0,1.20312 -0.875,2.07812 -0.83855,0.83855 -2.04167,0.83855 -1.20313,0 -2.07813,-0.83855 -0.83854,-0.875 -0.83854,-2.07812 v -49.58333 z"
+         id="path3492"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 343.2207,176.23603 q 0,1.82291 -1.27604,3.09895 -1.27605,1.27605 -3.09896,1.27605 -1.82292,0 -3.09896,-1.27605 -1.27604,-1.27604 -1.27604,-3.09895 0,-1.82292 1.27604,-3.09896 1.27604,-1.27604 3.09896,-1.27604 1.82291,0 3.09896,1.27604 1.27604,1.27604 1.27604,3.09896 z"
+         id="path3494"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>		
+			</a>
+			<a href="#" id="menu--toggle">
+				<span></span>
+				<span></span>
+			</a>
+			<ul>
+				<li><a href="PlaceCert.html">Provide Certificates</a></li>
+				<li><a href="SetHubID.html">Set Hub ID</a></li>
+				<li><a href="Sensor.html">Define Sensors</a></li>
+				<li><a href="Network.html">Define Network</a></li>
+				<li><a href="Power.html">Power</a></li>
+				<li><a href="ListComm.html">Communication Protocols</a></li>
+			</ul>
+		</div>
+	</header>
+	<nav id="full--menu" class="">
+		<div class="wrap cf">
+			<ul class="main--menu">
+				<li><a href="PlaceCert.html" data-loading-title="Place the Certificate Downloaded From C2NeT Platform.">Provide Certificates</a></li>
+				<li><a href="SetHubID.html" data-loading-title="Set Hub ID assigned by C2NET Platform.">Set Hub ID</a></li>
+				<li><a href="Sensor.html" data-loading-title="Add,Select,Remove Sensing Elements.">Define Sensor</a></li>
+				<li><a href="Network.html" data-loading-title="Add,Select,Remove Sensing Elements.">Define Network</a></li>
+				<li><a href="Power.html" data-loading-title="Set C2Net Platform Endpoint.">Power</a></li>
+				<li><a href="ListComm.html" data-loading-title="Communication Protocols.">Communication Protocols</a></li>
+			</ul>
+			<ul class="secondary--menu">
+				<li><a href="" data-loading-title="The legal stuff.">Terms &amp; Conditions</a></li>
+				<li><a href="" data-loading-title="The legal stuff.">Privacy Policy</a></li>
+			</ul>
+			<a href="http://gris.uninova.pt" class="tablet--up arrow--right white start--project">GRIS/Uninova</a>
+		</div>
+	</nav>
+
+	<section class="full" id="page--hero">
+	
+	</section>
+	<div class='text'>
+  <div class='content'></div>
+  <div class='dash'></div>
+</div>	
+
+<footer id="global--footer" style="position: absolute;right: 0;  bottom: 0;  left: 0;">
+	<div class="wrap cf">
+			<a class="cnet " href="http://c2net-project.eu/" data-os-animation="fadeInUp">About C2NET</a>
+			<a class="copyright" href="http://gris.uninova.pt" data-os-animation="fadeInUp">
+				© GRIS/UNINOVA. 2017
+			</a>
+		</div>
+	</footer>
+</main>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="LWFiles/waypoints.js"></script>
+<script type="text/javascript" src="LWFiles/slick.js"></script>
+<script type="text/javascript" src="LWFiles/ScrollMagic.js"></script>
+<script type="text/javascript" src="LWFiles/scripts-min.js"></script>
+<script type="text/javascript" src="LWFiles/wp-embed.js"></script>
+
+<script type="text/javascript">
+	
+  var app;
+
+  $(document).ready(function() {
+	  
+    return app.init();
+  });
+
+  app = {
+    text: "LightWeight IoT Hub",
+    index: 0,
+    chars: 0,
+    speed: 180,
+    container: ".text .content",
+    init: function() {
+      this.chars = this.text.length;
+      return this.write();
+    },
+    write: function() {
+      $(this.container).append(this.text[this.index]);
+      if (this.index < this.chars) {
+        this.index++;
+        return window.setTimeout(function() {
+          return app.write();
+        }, this.speed);
+      }
+    }
+  };
+
+
+</script>
+
+
+ 
+</body></html>
+<!-- end of site -->

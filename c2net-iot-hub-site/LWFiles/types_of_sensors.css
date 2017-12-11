@@ -1,0 +1,15 @@
+/* LIST #5 */
+
+#list5 li ul {
+    display: block;
+    float: left;
+    width: 25%;
+    color:#000000;
+   font-size:8px;
+    padding-bottom: 2em;
+
+}
+
+#list5 { color:#181818;font-size:28px;text-align: center;padding-top: 15cm; padding:15px 0 15px 15px; }
+
+#list5  ul li label {color:#0066FF;font-size:15px; }

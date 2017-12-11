@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,300");
+.input-submit,
+.open-modal {
+  background: #c41;
+  border: none;
+  color: #eeeaea;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  outline: none;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  margin: 0;
+}
+.icon {
+  font-size: 60px;
+  color: #c41;
+}
+.modal-overlay {
+  background: rgba(51,51,68,0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal {
+  background: #eeeaea;
+  text-align: center;
+  width: 230px;
+  height: 320px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 3px;
+  margin: auto;
+  padding: 20px;
+  -webkit-filter: url("#blur");
+          filter: url("#blur");
+  -webkit-transform: translate3d(0, -900%, 0);
+          transform: translate3d(0, -900%, 0);
+}
+.modal h1 {
+  margin-bottom: 20px;
+}
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-family: roboto;
+  border: none;
+  width: 100%;
+}
+.input-text {
+  background: #eeeaea;
+  border-bottom: 2px solid #cdcccc;
+  outline: none;
+  color: #334;
+}
+:focus {
+  border-bottom-color: #c41;
+}
+::-webkit-input-placeholder {
+  color: #334;
+}
+::-moz-placeholder {
+  color: #334;
+}
+:-ms-input-placeholder {
+  color: #334;
+}
+::placeholder {
+  color: #334;
+}
+.input-submit {
+  margin-top: 10px;
+}
+.close-modal {
+  background: none;
+  border: none;
+  position: absolute;
+  font-size: 20px;
+  right: 10px;
+  top: 10px;
+  color: #334;
+  outline: none;
+}
+.open-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 40px;
+  margin: auto;
+}
+.intro {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 120px;
+  -webkit-transform: translate(0, -90px);
+          transform: translate(0, -90px);
+}
+.filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
