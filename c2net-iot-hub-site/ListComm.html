@@ -329,7 +329,7 @@ var dropdown = $('.dropdown');
 	    	switch(arr[i].trim()){
 			case "DataListenerSerialPort":$('#serial').click();break;	
 			case "DataListenerZigBee":$('#zig').click();break;	
-			case "DataListenerSocketUdp":$('#sock').click();break;	
+			case "DataListenerSocketUDP":$('#sock').click();break;	
 			case "DataListenerCanBus":$('#can').click();break;
 			case "DataListenerPistolReader":$('#serial').click();break;
 			default:
@@ -398,7 +398,7 @@ $(document).ready(function(){
   		}
 		if ($('#sock').is(':checked')){
 			y={}
-			y.name = "DataListenerSocketUdp";
+			y.name = "DataListenerSocketUDP";
 			x.push(y);
 
   		}

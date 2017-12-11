@@ -40,7 +40,7 @@ func ReadDataListeners() ([]string, bool) {
 func WriteDataListeners(newinput []string) bool {
 	d1 := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<CommunicationListeners>\n"
 	for i := 0; i < len(newinput); i++ {
-		s := "<CommunicationListner>" + newinput[i] + "</CommunicationListner>"
+		s := "	<CommunicationListner>" + newinput[i] + "</CommunicationListner>"
 		d1 += s
 		d1 += "\n"
 	}

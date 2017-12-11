@@ -64,3 +64,695 @@ DEI,11-12-2017 15:57:43,0,2. Cortar Barra 25x4x100,OF 2017 / 147,022,Jorge Ara?j
 DEI,11-12-2017 16:28:08,0,9. Limpar e Empacotar (saco 30 x 40 ),OF 2017 / 142,028,Andreia Pereira
 DEI,11-12-2017 16:28:25,169,2. Cortar Barra 25x4x100,OF 2017 / 147,022,Jorge Ara?jo
 CONNECTOIN MADE -->> 
+{
+  "hubID": 13,
+  "resourceID": 14,
+  "title": "resource_full_configuration",
+  "body": {
+    "name": "aam",
+    "resources": [
+      {
+        "name": "Prensa de Exc?ntico de 50 KN - 140 mm",
+        "id": 14,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [
+              {
+                "datatype": "udp",
+                "name": "Prensa 50KN - Estampagem",
+                "type": "integer",
+                "frequency": "35"
+              },
+              {
+                "datatype": "udp",
+                "name": "Prensa 50KN - Corte",
+                "type": "integer",
+                "frequency": "35"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Prensa de Exc?ntico de 300 KN",
+        "id": 15,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [
+              {
+                "datatype": "udp",
+                "name": "Prensa 300KN - Estampagem",
+                "type": "integer",
+                "frequency": "35"
+              },
+              {
+                "datatype": "udp",
+                "name": "Prensa 300KN - Corte",
+                "type": "integer",
+                "frequency": "41"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Control",
+        "id": 16,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "serial"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [{
+              "datatype": "serial",
+              "name": "Barcode reader",
+              "type": "integer",
+              "frequency": "35"
+            }]
+          }
+        ]
+      },
+      {
+        "name": "Prensa de Exc?ntico Corte SNA Europe",
+        "id": 17,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [{
+              "datatype": "udp",
+              "name": "Prensa SNA - Corte",
+              "type": "integer",
+              "frequency": "35"
+            }]
+          }
+        ]
+      },
+      {
+        "name": "Prensa de Exc?ntico SNA Europe",
+        "id": 18,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [{
+              "datatype": "udp",
+              "name": "Prensa SNA - Estampagem",
+              "type": "integer",
+              "frequency": "35"
+            }]
+          }
+        ]
+      },
+      {
+        "name": "M?quina de Pintura Eletroest?tica",
+        "id": 19,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [
+              {
+                "datatype": "udp",
+                "name": "Temp1",
+                "type": "integer",
+                "frequency": "20"
+              },
+              {
+                "datatype": "udp",
+                "name": "Temp2",
+                "type": "integer",
+                "frequency": "20"
+              },
+              {
+                "datatype": "udp",
+                "name": "Button",
+                "type": "integer",
+                "frequency": "20"
+              },
+              {
+                "datatype": "udp",
+                "name": "Elcometer",
+                "type": "integer",
+                "frequency": "30"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "id": 13,
+    "properties": []
+  }
+}
+{"datatype":"udp","name":"Prensa 50KN - Estampagem","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico de 50 KN - 140 mm","14","Prensa 50KN - Estampagem" )
+13 3135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+Lauching Publisher for NODE:31
+Prensa de Exc?ntico de 50 KN - 140 mm.Prensa 50KN - Estampagem
+created event Publisher for resource 14 31 Prensa de Exc?ntico de 50 KN - 140 mm
+{"datatype":"udp","name":"Prensa 50KN - Corte","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico de 50 KN - 140 mm","14","Prensa 50KN - Corte" )
+13 3135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"udp","name":"Prensa 300KN - Estampagem","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico de 300 KN","15","Prensa 300KN - Estampagem" )
+13 A135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+Lauching Publisher for NODE:A1
+Prensa de Exc?ntico de 300 KN.Prensa 300KN - Estampagem
+created event Publisher for resource 15 A1 Prensa de Exc?ntico de 300 KN
+{"datatype":"udp","name":"Prensa 300KN - Corte","type":"integer","frequency":"41"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico de 300 KN","15","Prensa 300KN - Corte" )
+13 A141
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"serial","name":"Barcode reader","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Control","16","Barcode reader" )
+01 BA35
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+Lauching Publisher for NODE:BA
+Control.Barcode reader
+created event Publisher for resource 16 BA Control
+{"datatype":"udp","name":"Prensa SNA - Corte","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico Corte SNA Europe","17","Prensa SNA - Corte" )
+13 E135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+Lauching Publisher for NODE:E1
+Prensa de Exc?ntico Corte SNA Europe.Prensa SNA - Corte
+created event Publisher for resource 17 E1 Prensa de Exc?ntico Corte SNA Europe
+{"datatype":"udp","name":"Prensa SNA - Estampagem","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico SNA Europe","18","Prensa SNA - Estampagem" )
+13 C135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+Lauching Publisher for NODE:C1
+Prensa de Exc?ntico SNA Europe.Prensa SNA - Estampagem
+created event Publisher for resource 18 C1 Prensa de Exc?ntico SNA Europe
+{"datatype":"udp","name":"Temp1","type":"integer","frequency":"20"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("M?quina de Pintura Eletroest?tica","19","Temp1" )
+{"datatype":"udp","name":"Temp2","type":"integer","frequency":"20"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("M?quina de Pintura Eletroest?tica","19","Temp2" )
+{"datatype":"udp","name":"Button","type":"integer","frequency":"20"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("M?quina de Pintura Eletroest?tica","19","Button" )
+13 D120
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+Lauching Publisher for NODE:D1
+M?quina de Pintura Eletroest?tica.Button
+created event Publisher for resource 19 D1 M?quina de Pintura Eletroest?tica
+{"datatype":"udp","name":"Elcometer","type":"integer","frequency":"30"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("M?quina de Pintura Eletroest?tica","19","Elcometer" )
+0x9f B130
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+Lauching Publisher for NODE:B1
+M?quina de Pintura Eletroest?tica.Elcometer
+created event Publisher for resource 19 B1 M?quina de Pintura Eletroest?tica
+{"title":"resource_fields_data","hubID":"13","resourceID":"14","body":[{"name":"value","type":"string"},{"name":"timestamp","type":"string"}]}
+{"title":"resource_fields_data","hubID":"13","resourceID":"15","body":[{"name":"value","type":"string"},{"name":"timestamp","type":"string"}]}
+{"title":"resource_fields_data","hubID":"13","resourceID":"16","body":[{"name":"value","type":"string"},{"name":"timestamp","type":"string"}]}
+{"title":"resource_fields_data","hubID":"13","resourceID":"17","body":[{"name":"value","type":"string"},{"name":"timestamp","type":"string"}]}
+{"title":"resource_fields_data","hubID":"13","resourceID":"18","body":[{"name":"value","type":"string"},{"name":"timestamp","type":"string"}]}
+{"title":"resource_fields_data","hubID":"13","resourceID":"19","body":[{"name":"value","type":"string"},{"name":"timestamp","type":"string"}]}
+Message :{"hubID":"hubID=13","resourceID":"14","title":"resource_data","body":"[{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:33:59001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"},{\"value\":\"000\",\"timestamp\":\"2017-12-11T16:34:19001Z\"}]"}
+################# Emitted ###############################true
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Message :{"hubID":"hubID=13","resourceID":"16","title":"resource_data","body":"[{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Revitar Chapa Perfurada OF 2017   146 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:26001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 96mm (4? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 96mm (4? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 96mm (4? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 96mm (4? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 96mm (4? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm (5? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm (5? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm (5? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm (5? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm (5? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm (2? e 3? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm (2? e 3? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm (2? e 3? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm (2? e 3? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm (2? e 3? dobra) OF 2017   143 025 Raquel Teixeira\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:27001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 009 Marlene Martins\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 25mm ( 11? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 10? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 149 5mm ( 9? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31 5mm ( 7? dobra e 8? dobra ) OF 2017   145 015 Rosa Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 010 Jos? Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 22mm e 31mm ( 1? dobra e 2? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 22mm e 31mm ( 1? dobra e 2? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 22mm e 31mm ( 1? dobra e 2? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 22mm e 31mm ( 1? dobra e 2? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 22mm e 31mm ( 1? dobra e 2? dobra ) OF 2017   145 014 Marina Ribeiro\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar chapa laser OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Furar chapa 22x117 OF 2017   148 029 Emanuel Carvalho\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Furar chapa 22x117 OF 2017   148 029 Emanuel Carvalho\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Furar chapa 22x117 OF 2017   148 029 Emanuel Carvalho\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Furar chapa 22x117 OF 2017   148 029 Emanuel Carvalho\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Furar chapa 22x117 OF 2017   148 029 Emanuel Carvalho\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 008 Diogo Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 008 Diogo Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 008 Diogo Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 008 Diogo Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Soldar MIG OF 2017   129 008 Diogo Silva\",\"timestamp\":\"2017-12-11T16:34:28001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Roscar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Roscar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Roscar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Roscar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Roscar OF 2017   149 007 Vitor Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Acrilico 10mm OF 2017   144 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Acrilico 10mm OF 2017   144 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Acrilico 10mm OF 2017   144 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Acrilico 10mm OF 2017   144 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Acrilico 10mm OF 2017   144 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   142 026 S?lvia Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   142 026 S?lvia Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   142 026 S?lvia Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   142 026 S?lvia Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 21mm (1? dobra) OF 2017   142 026 S?lvia Sousa\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Base OF 2017   150 030 Ab?lio Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Quinar OF 2017   149 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 26mm ( 3? dobra e 4? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Dobrar 31mm ( 5? dobra e 6? dobra ) OF 2017   145 011 Silv?a Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Estampar chapa 22x117 OF 2017   148 031 Hugo Martins\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Estampar chapa 22x117 OF 2017   148 031 Hugo Martins\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Estampar chapa 22x117 OF 2017   148 031 Hugo Martins\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Estampar chapa 22x117 OF 2017   148 031 Hugo Martins\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Estampar chapa 22x117 OF 2017   148 031 Hugo Martins\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cravar e Paletizar Cabos Preto Mate Texturado Linguete 5 mm OF2017   116 006 Marta Silva\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 028 Andreia Pereira\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 028 Andreia Pereira\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 028 Andreia Pereira\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 028 Andreia Pereira\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Limpar e Empacotar (saco 30 x 40 ) OF 2017   142 028 Andreia Pereira\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"},{\"value\":\"Cortar Barra 25x4x100 OF 2017   147 022 Jorge Ara?jo\",\"timestamp\":\"2017-12-11T16:34:29001Z\"}]"}
+################# Emitted ###############################true
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Message :{"hubID":"hubID=13","resourceID":"19","title":"resource_data","body":"[{\"value\":\"251.0\",\"timestamp\":\"2017-12-10T14:48:30001Z\"},{\"value\":\"251.0\",\"timestamp\":\"2017-12-10T14:48:30001Z\"},{\"value\":\"251.0\",\"timestamp\":\"2017-12-10T14:48:30001Z\"},{\"value\":\"251.0\",\"timestamp\":\"2017-12-10T14:48:30001Z\"},{\"value\":\"067.16\",\"timestamp\":\"2017-12-10T14:48:33001Z\"},{\"value\":\"067.16\",\"timestamp\":\"2017-12-10T14:48:33001Z\"},{\"value\":\"067.16\",\"timestamp\":\"2017-12-10T14:48:33001Z\"},{\"value\":\"067.16\",\"timestamp\":\"2017-12-10T14:48:33001Z\"}]"}
+################# Emitted ###############################true
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource19!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource19!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource19!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource19!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource19!
+Publish to the platform for resource17!
+Publish to the platform for resource19!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource19!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource19!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource19!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource19!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource19!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource19!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource19!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource19!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource19!
+Publish to the platform for resource17!
+Publish to the platform for resource19!
+Publish to the platform for resource18!
+{
+  "hubID": 13,
+  "resourceID": 14,
+  "title": "resource_full_configuration",
+  "body": {
+    "name": "aam",
+    "resources": [
+      {
+        "name": "Prensa de Exc?ntico de 50 KN - 140 mm",
+        "id": 14,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [
+              {
+                "datatype": "udp",
+                "name": "Prensa 50KN - Estampagem",
+                "type": "integer",
+                "frequency": "35"
+              },
+              {
+                "datatype": "udp",
+                "name": "Prensa 50KN - Corte",
+                "type": "integer",
+                "frequency": "35"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Prensa de Exc?ntico de 300 KN",
+        "id": 15,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [
+              {
+                "datatype": "udp",
+                "name": "Prensa 300KN - Estampagem",
+                "type": "integer",
+                "frequency": "35"
+              },
+              {
+                "datatype": "udp",
+                "name": "Prensa 300KN - Corte",
+                "type": "integer",
+                "frequency": "41"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Control",
+        "id": 16,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "serial"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [{
+              "datatype": "serial",
+              "name": "Barcode reader",
+              "type": "integer",
+              "frequency": "35"
+            }]
+          }
+        ]
+      },
+      {
+        "name": "Prensa de Exc?ntico Corte SNA Europe",
+        "id": 17,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [{
+              "datatype": "udp",
+              "name": "Prensa SNA - Corte",
+              "type": "integer",
+              "frequency": "35"
+            }]
+          }
+        ]
+      },
+      {
+        "name": "Prensa de Exc?ntico SNA Europe",
+        "id": 18,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [{
+              "datatype": "udp",
+              "name": "Prensa SNA - Estampagem",
+              "type": "integer",
+              "frequency": "35"
+            }]
+          }
+        ]
+      },
+      {
+        "name": "M?quina de Pintura Eletroest?tica",
+        "id": 19,
+        "properties": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "value": "udp"
+          },
+          {
+            "name": "sensing elements",
+            "type": "JSON",
+            "value": [
+              {
+                "datatype": "udp",
+                "name": "Temp1",
+                "type": "integer",
+                "frequency": "20"
+              },
+              {
+                "datatype": "udp",
+                "name": "Temp2",
+                "type": "integer",
+                "frequency": "20"
+              },
+              {
+                "datatype": "udp",
+                "name": "Button",
+                "type": "integer",
+                "frequency": "20"
+              },
+              {
+                "datatype": "udp",
+                "name": "Elcometer",
+                "type": "integer",
+                "frequency": "30"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "id": 13,
+    "properties": []
+  }
+}
+{"datatype":"udp","name":"Prensa 50KN - Estampagem","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico de 50 KN - 140 mm","14","Prensa 50KN - Estampagem" )
+13 3135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"udp","name":"Prensa 50KN - Corte","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico de 50 KN - 140 mm","14","Prensa 50KN - Corte" )
+13 3135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"udp","name":"Prensa 300KN - Estampagem","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico de 300 KN","15","Prensa 300KN - Estampagem" )
+13 A135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"udp","name":"Prensa 300KN - Corte","type":"integer","frequency":"41"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico de 300 KN","15","Prensa 300KN - Corte" )
+13 A141
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"serial","name":"Barcode reader","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Control","16","Barcode reader" )
+01 BA35
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"udp","name":"Prensa SNA - Corte","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico Corte SNA Europe","17","Prensa SNA - Corte" )
+13 E135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"udp","name":"Prensa SNA - Estampagem","type":"integer","frequency":"35"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("Prensa de Exc?ntico SNA Europe","18","Prensa SNA - Estampagem" )
+13 C135
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"udp","name":"Temp1","type":"integer","frequency":"20"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("M?quina de Pintura Eletroest?tica","19","Temp1" )
+{"datatype":"udp","name":"Temp2","type":"integer","frequency":"20"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("M?quina de Pintura Eletroest?tica","19","Temp2" )
+{"datatype":"udp","name":"Button","type":"integer","frequency":"20"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("M?quina de Pintura Eletroest?tica","19","Button" )
+13 D120
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+{"datatype":"udp","name":"Elcometer","type":"integer","frequency":"30"}
+error performing update for integer result on query : insert into full_configuration(c2netname,c2netid,name) values("M?quina de Pintura Eletroest?tica","19","Elcometer" )
+0x9f B130
+Communication.SocketSend>>> Request packet sent to: 255.255.255.255 (DEFAULT)
+Sent broadcast again
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource19!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource19!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource19!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource16!
+Publish to the platform for resource19!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+error performing query for string result on query : select byte5,byte6,byte7,c2netname,sensors.name,timestamp from collected_values inner join sensors inner join full_configuration on collected_values.cod_res_node=sensors.nodeid and sensors.name=full_configuration.name where sensors.nodeid='31'
+error performing query for string result on query : select byte5,byte6,byte7,c2netname,sensors.name,timestamp from collected_values inner join sensors inner join full_configuration on collected_values.cod_res_node=sensors.nodeid and sensors.name=full_configuration.name where sensors.nodeid='A1'
+error performing query for string result on query : select collected,c2netname,sensors.name,timestamp from collected_values_barcode inner join sensors inner join full_configuration on collected_values_barcode.cod_res_node=sensors.nodeid and sensors.name=full_configuration.name where sensors.nodeid='BA'
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource17!
+Publish to the platform for resource19!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource15!
+Publish to the platform for resource19!
+Publish to the platform for resource19!
+Publish to the platform for resource16!
+Publish to the platform for resource17!
+Publish to the platform for resource18!
+Publish to the platform for resource19!
+Publish to the platform for resource14!
+Publish to the platform for resource19!
+Publish to the platform for resource15!
