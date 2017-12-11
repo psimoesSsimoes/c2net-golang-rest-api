@@ -34,7 +34,6 @@ func AllSensors(w http.ResponseWriter, r *http.Request) {
 
 	var sensors []Sensor
 	if gsensors==nil{
-	log.Info("aRRIVED HERE")
 	rows, err := db.Query("SELECT * FROM sensors")
 	gsensors=make(map[string]Sensor,0)
 	for rows.Next() {
@@ -74,19 +73,19 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 		decoder := json.NewDecoder(r.Body)
 		var sensors []Sensor
 		err = decoder.Decode(&sensors)
+		
 		if err != nil {
 			log.Error(err.Error())
 		}
 		defer db.Close()
 		for _, v := range sensors {
-
 			_, ok := gsensors[v.Nodeid+v.Id]
-
+			
 			if !ok {
+
 				stmt, _ := db.Prepare("INSERT INTO sensors(nodeid,typeid,typename,id,name,freq) values(?,?,?,?,?,?)")
 				_, err = stmt.Exec(v.Nodeid, v.Typeid, v.Typename, v.Id, v.Name, v.Freq)
 				if err != nil {
-					log.Info("entered error")
 					json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
 					return
 				} else {
@@ -96,7 +95,7 @@ func InsertSensor(w http.ResponseWriter, r *http.Request) {
 			} else {
 				stmt, _ := db.Prepare("UPDATE sensors SET typeid = (?),typename = (?),name=(?),freq=(?) where nodeid = (?) and id =(?)")
 
-				_, err = stmt.Exec(v.Typeid, v.Typename, v.Id, v.Name, v.Freq, v.Nodeid, v.Id)
+				_, err = stmt.Exec(v.Typeid, v.Typename, v.Name, v.Freq, v.Nodeid, v.Id)
 				if err == nil {
 					gsensors[v.Nodeid+v.Id] = v
 				}
@@ -114,17 +113,14 @@ func DeleteSensor(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Couldn't open c2net sqlite db"})
 	} else {
 		decoder := json.NewDecoder(r.Body)
-		log.Info(decoder)
 		var sensor Sensor
 		err = decoder.Decode(&sensor)
 		if err != nil {
 			log.Error(err.Error())
 		}
-		log.Info(sensor)
 		stmt, _ := db.Prepare("DELETE FROM sensors WHERE nodeid = (?) and id = (?)")
 		_, err = stmt.Exec(sensor.Nodeid, sensor.Id)
 		if err != nil {
-			log.Info("entered error")
 			log.Error(err.Error()) // proper error handling instead of panic in your app
 			json.NewEncoder(w).Encode(HttpResp{Status: 500, Description: "Failed to insert sensor area in database"})
 		} else {
